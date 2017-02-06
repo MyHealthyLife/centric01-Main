@@ -32,25 +32,10 @@ public interface DataService {
      */
     @WebMethod
     @WebResult(name = "person", targetNamespace = "")
-    @RequestWrapper(localName = "getPerson", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetPerson")
-    @ResponseWrapper(localName = "getPersonResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetPersonResponse")
-    @Action(input = "http://soap.dataservice.myhealthylife/DataService/getPersonRequest", output = "http://soap.dataservice.myhealthylife/DataService/getPersonResponse")
-    public Person getPerson(
-        @WebParam(name = "arg0", targetNamespace = "")
-        long arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns myhealthylife.dataservice.soap.Person
-     */
-    @WebMethod
-    @WebResult(name = "person", targetNamespace = "")
-    @RequestWrapper(localName = "updatePerson", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.UpdatePerson")
-    @ResponseWrapper(localName = "updatePersonResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.UpdatePersonResponse")
-    @Action(input = "http://soap.dataservice.myhealthylife/DataService/updatePersonRequest", output = "http://soap.dataservice.myhealthylife/DataService/updatePersonResponse")
-    public Person updatePerson(
+    @RequestWrapper(localName = "register", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.Register")
+    @ResponseWrapper(localName = "registerResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.RegisterResponse")
+    @Action(input = "http://soap.dataservice.myhealthylife/DataService/registerRequest", output = "http://soap.dataservice.myhealthylife/DataService/registerResponse")
+    public Person register(
         @WebParam(name = "arg0", targetNamespace = "")
         Person arg0);
 
@@ -80,6 +65,36 @@ public interface DataService {
     public long deletePerson(
         @WebParam(name = "arg0", targetNamespace = "")
         long arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns myhealthylife.dataservice.soap.Person
+     */
+    @WebMethod
+    @WebResult(name = "person", targetNamespace = "")
+    @RequestWrapper(localName = "getPerson", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetPerson")
+    @ResponseWrapper(localName = "getPersonResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetPersonResponse")
+    @Action(input = "http://soap.dataservice.myhealthylife/DataService/getPersonRequest", output = "http://soap.dataservice.myhealthylife/DataService/getPersonResponse")
+    public Person getPerson(
+        @WebParam(name = "arg0", targetNamespace = "")
+        long arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns myhealthylife.dataservice.soap.Person
+     */
+    @WebMethod
+    @WebResult(name = "person", targetNamespace = "")
+    @RequestWrapper(localName = "updatePerson", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.UpdatePerson")
+    @ResponseWrapper(localName = "updatePersonResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.UpdatePersonResponse")
+    @Action(input = "http://soap.dataservice.myhealthylife/DataService/updatePersonRequest", output = "http://soap.dataservice.myhealthylife/DataService/updatePersonResponse")
+    public Person updatePerson(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Person arg0);
 
     /**
      * 
@@ -170,11 +185,26 @@ public interface DataService {
      */
     @WebMethod
     @WebResult(name = "person", targetNamespace = "")
-    @RequestWrapper(localName = "register", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.Register")
-    @ResponseWrapper(localName = "registerResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.RegisterResponse")
-    @Action(input = "http://soap.dataservice.myhealthylife/DataService/registerRequest", output = "http://soap.dataservice.myhealthylife/DataService/registerResponse")
-    public Person register(
+    @RequestWrapper(localName = "getPersonByUsername", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetPersonByUsername")
+    @ResponseWrapper(localName = "getPersonByUsernameResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetPersonByUsernameResponse")
+    @Action(input = "http://soap.dataservice.myhealthylife/DataService/getPersonByUsernameRequest", output = "http://soap.dataservice.myhealthylife/DataService/getPersonByUsernameResponse")
+    public Person getPersonByUsername(
         @WebParam(name = "arg0", targetNamespace = "")
-        Person arg0);
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns myhealthylife.dataservice.soap.Person
+     */
+    @WebMethod
+    @WebResult(name = "person", targetNamespace = "")
+    @RequestWrapper(localName = "getPersonByTelegramUsername", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetPersonByTelegramUsername")
+    @ResponseWrapper(localName = "getPersonByTelegramUsernameResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetPersonByTelegramUsernameResponse")
+    @Action(input = "http://soap.dataservice.myhealthylife/DataService/getPersonByTelegramUsernameRequest", output = "http://soap.dataservice.myhealthylife/DataService/getPersonByTelegramUsernameResponse")
+    public Person getPersonByTelegramUsername(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
 }
