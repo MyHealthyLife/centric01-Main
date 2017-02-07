@@ -9,6 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import myhealthylife.centric1.util.ServicesLocator;
 import myhealthylife.centric1.util.Utilities;
 import myhealthylife.dataservice.soap.DataService;
 import myhealthylife.dataservice.soap.DataService_Service;
@@ -22,8 +23,7 @@ public class DataHandler {
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
 	public Response getPerson(@PathParam("username") String username){
-		DataService_Service service=new DataService_Service();
-		DataService ds=service.getDataServiceImplPort();
+		DataService ds = ServicesLocator.getDataServiceConnection();
 		Person p=ds.getPersonByUsername(username);
 		
 		if(p==null)
@@ -31,12 +31,21 @@ public class DataHandler {
 		
 		return Utilities.throwOK(p);
 	}
+
+	
 	
 	@PUT
-	@Path("/{username}")
+	@Path("/{username}")//the username in path in this way also the username of the person can be update by the body
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
 	public Response updatePerson(Person p, @PathParam("username") String username){
+		DataService ds = ServicesLocator.getDataServiceConnection();
+		Person stored=ds.getPersonByUsername(username);
+		
+		if(stored==null)
+			return Utilities.throwResourceNotFound();
+		
+		
 		
 		return null;
 	}

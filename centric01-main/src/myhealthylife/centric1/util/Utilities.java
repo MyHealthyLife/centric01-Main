@@ -16,9 +16,4 @@ public class Utilities {
     	return Response.status(Response.Status.OK).entity(o).build();
     }
     
-    public static DataService getDataServiceConnection() {
-		DataService_Service service=new DataService_Service();
-		DataService ds=service.getDataServiceImplPort();
-		return ds;
-	}
 }
