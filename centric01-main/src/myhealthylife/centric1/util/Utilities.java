@@ -16,4 +16,8 @@ public class Utilities {
     	return Response.status(Response.Status.OK).entity(o).build();
     }
     
+    public static Response throwConflict(){
+    	return Response.status(Response.Status.CONFLICT).build();
+    }
+    
 }
