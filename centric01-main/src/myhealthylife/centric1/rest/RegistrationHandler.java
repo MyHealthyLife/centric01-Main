@@ -18,10 +18,24 @@ public class RegistrationHandler {
 	@Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
 	public Response register(Person p){
-		Person registered=ServicesLocator.getDataServiceConnection().register(p);
-		if(p==null)
-			/*return conflict due to a incorrect data send by the user*/
+		
+		/*check if the user send the username*/
+		if(p.getUsername()==null)
+			return Utilities.throwBadRequest();
+		/* check for conflicts on the username*/
+		if(ServicesLocator.getDataServiceConnection().getPersonByUsername(p.getUsername())!=null)
 			return Utilities.throwConflict();
+		
+		/* check for conflicts on the telegram username*/
+		if(p.getTelegramUsername()!=null)
+			if(ServicesLocator.getDataServiceConnection().getPersonByTelegramUsername(p.getTelegramUsername())!=null)
+				return Utilities.throwConflict();
+		
+		Person registered=ServicesLocator.getDataServiceConnection().register(p);
+		
+		
+		if(registered==null)
+			return Utilities.throwBadRequest();
 		
 		return Utilities.throwOK(p);
 	}
