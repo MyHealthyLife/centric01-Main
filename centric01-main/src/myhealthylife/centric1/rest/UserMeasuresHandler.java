@@ -115,9 +115,9 @@ public class UserMeasuresHandler {
         if(measureToUpdate.getMeasureType()!=null) {
         	measure.setMeasureType(measureToUpdate.getMeasureType());
         }
-        /*if(measureToUpdate.getMeasureValue()!=null) {
+        if(measureToUpdate.getMeasureValue()!=null) {
         	measure.setMeasureValue(measureToUpdate.getMeasureValue());
-        }*/
+        }
         
         Measure mUpdated = ds.updateMeasure(measure);
         
@@ -146,7 +146,7 @@ public class UserMeasuresHandler {
         }
 		
         
-        if(measureToCreate.getDateRegistered()==null || measureToCreate.getMeasureType()==null) {
+        if(measureToCreate.getDateRegistered()==null || measureToCreate.getMeasureType()==null || measureToCreate.getMeasureValue()==null) {
         	return Utilities.throwBadRequest();
         }
         
