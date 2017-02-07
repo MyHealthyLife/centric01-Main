@@ -17,6 +17,7 @@ import javax.xml.ws.Service;
 import myhealthylife.centric1.util.ServicesLocator;
 import myhealthylife.centric1.util.Utilities;
 import myhealthylife.dataservice.soap.DataService;
+import myhealthylife.dataservice.soap.Measure;
 import myhealthylife.dataservice.soap.MeasureHistory;
 import myhealthylife.dataservice.soap.People;
 import myhealthylife.dataservice.soap.Person;
@@ -38,7 +39,6 @@ public class UserMeasuresHandler {
 	public Response getMeasureHistory(@PathParam("username") String username) throws MalformedURLException{
 		
 		DataService ds = ServicesLocator.getDataServiceConnection();
-		Person p=ds.getPersonByUsername(username);
 		
         // Gets the person related to that username
         Person person = ds.getPersonByUsername(username);
@@ -50,6 +50,33 @@ public class UserMeasuresHandler {
 			
         // Gets the measure history
 		return Utilities.throwOK(ds.getMeasureHistory(person.getIdPerson()));
+        
+	}
+	
+	
+
+
+	@Path("/{username}/{mid}")
+	@GET
+    @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
+	public Response getMeasureByMid(@PathParam("username") String username, @PathParam("mid") Integer mid) {
+		
+		DataService ds = ServicesLocator.getDataServiceConnection();
+		
+        // Gets the person related to that username
+        Person person = ds.getPersonByUsername(username);
+        
+        // If the username does not exist it throws an error
+        if(person==null) {
+			return Utilities.throwResourceNotFound();
+        }
+		
+        // Gets the measure related to that person
+        Measure measure = ds.getMeasure(mid);
+        
+        // Gets the measure history
+		return Utilities.throwOK(measure);
         
 	}
 	
