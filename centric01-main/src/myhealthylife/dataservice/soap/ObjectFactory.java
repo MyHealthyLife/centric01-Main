@@ -27,11 +27,14 @@ public class ObjectFactory {
     private final static QName _GetMeasureResponse_QNAME = new QName("http://soap.dataservice.myhealthylife/", "getMeasureResponse");
     private final static QName _ListPeople_QNAME = new QName("http://soap.dataservice.myhealthylife/", "listPeople");
     private final static QName _GetPersonByTelegramUsername_QNAME = new QName("http://soap.dataservice.myhealthylife/", "getPersonByTelegramUsername");
+    private final static QName _GetMeasureHistoryResponse_QNAME = new QName("http://soap.dataservice.myhealthylife/", "getMeasureHistoryResponse");
     private final static QName _GetPersonByUsername_QNAME = new QName("http://soap.dataservice.myhealthylife/", "getPersonByUsername");
     private final static QName _DeleteMeasure_QNAME = new QName("http://soap.dataservice.myhealthylife/", "deleteMeasure");
     private final static QName _GetCurrentHealth_QNAME = new QName("http://soap.dataservice.myhealthylife/", "getCurrentHealth");
+    private final static QName _MeasureHystory_QNAME = new QName("http://soap.dataservice.myhealthylife/", "measure_hystory");
     private final static QName _GetPersonResponse_QNAME = new QName("http://soap.dataservice.myhealthylife/", "getPersonResponse");
     private final static QName _UpdateMeasure_QNAME = new QName("http://soap.dataservice.myhealthylife/", "updateMeasure");
+    private final static QName _GetMeasureHistory_QNAME = new QName("http://soap.dataservice.myhealthylife/", "getMeasureHistory");
     private final static QName _DeletePersonResponse_QNAME = new QName("http://soap.dataservice.myhealthylife/", "deletePersonResponse");
     private final static QName _GetMeasure_QNAME = new QName("http://soap.dataservice.myhealthylife/", "getMeasure");
     private final static QName _GetPersonByUsernameResponse_QNAME = new QName("http://soap.dataservice.myhealthylife/", "getPersonByUsernameResponse");
@@ -101,11 +104,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetMeasureHistoryResponse }
+     * 
+     */
+    public GetMeasureHistoryResponse createGetMeasureHistoryResponse() {
+        return new GetMeasureHistoryResponse();
+    }
+
+    /**
      * Create an instance of {@link GetPersonByTelegramUsername }
      * 
      */
     public GetPersonByTelegramUsername createGetPersonByTelegramUsername() {
         return new GetPersonByTelegramUsername();
+    }
+
+    /**
+     * Create an instance of {@link GetMeasureHistory }
+     * 
+     */
+    public GetMeasureHistory createGetMeasureHistory() {
+        return new GetMeasureHistory();
     }
 
     /**
@@ -122,6 +141,14 @@ public class ObjectFactory {
      */
     public GetMeasure createGetMeasure() {
         return new GetMeasure();
+    }
+
+    /**
+     * Create an instance of {@link MeasureHistory }
+     * 
+     */
+    public MeasureHistory createMeasureHistory() {
+        return new MeasureHistory();
     }
 
     /**
@@ -320,6 +347,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMeasureHistoryResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.dataservice.myhealthylife/", name = "getMeasureHistoryResponse")
+    public JAXBElement<GetMeasureHistoryResponse> createGetMeasureHistoryResponse(GetMeasureHistoryResponse value) {
+        return new JAXBElement<GetMeasureHistoryResponse>(_GetMeasureHistoryResponse_QNAME, GetMeasureHistoryResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetPersonByUsername }{@code >}}
      * 
      */
@@ -347,6 +383,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MeasureHistory }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.dataservice.myhealthylife/", name = "measure_hystory")
+    public JAXBElement<MeasureHistory> createMeasureHystory(MeasureHistory value) {
+        return new JAXBElement<MeasureHistory>(_MeasureHystory_QNAME, MeasureHistory.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetPersonResponse }{@code >}}
      * 
      */
@@ -362,6 +407,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.dataservice.myhealthylife/", name = "updateMeasure")
     public JAXBElement<UpdateMeasure> createUpdateMeasure(UpdateMeasure value) {
         return new JAXBElement<UpdateMeasure>(_UpdateMeasure_QNAME, UpdateMeasure.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMeasureHistory }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.dataservice.myhealthylife/", name = "getMeasureHistory")
+    public JAXBElement<GetMeasureHistory> createGetMeasureHistory(GetMeasureHistory value) {
+        return new JAXBElement<GetMeasureHistory>(_GetMeasureHistory_QNAME, GetMeasureHistory.class, null, value);
     }
 
     /**

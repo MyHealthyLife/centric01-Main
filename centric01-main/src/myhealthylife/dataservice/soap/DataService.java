@@ -26,21 +26,6 @@ public interface DataService {
 
     /**
      * 
-     * @param arg0
-     * @return
-     *     returns myhealthylife.dataservice.soap.Person
-     */
-    @WebMethod
-    @WebResult(name = "person", targetNamespace = "")
-    @RequestWrapper(localName = "register", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.Register")
-    @ResponseWrapper(localName = "registerResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.RegisterResponse")
-    @Action(input = "http://soap.dataservice.myhealthylife/DataService/registerRequest", output = "http://soap.dataservice.myhealthylife/DataService/registerResponse")
-    public Person register(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Person arg0);
-
-    /**
-     * 
      * @return
      *     returns myhealthylife.dataservice.soap.People
      */
@@ -50,21 +35,6 @@ public interface DataService {
     @ResponseWrapper(localName = "listPeopleResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.ListPeopleResponse")
     @Action(input = "http://soap.dataservice.myhealthylife/DataService/listPeopleRequest", output = "http://soap.dataservice.myhealthylife/DataService/listPeopleResponse")
     public People listPeople();
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns long
-     */
-    @WebMethod
-    @WebResult(name = "idPerson", targetNamespace = "")
-    @RequestWrapper(localName = "deletePerson", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.DeletePerson")
-    @ResponseWrapper(localName = "deletePersonResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.DeletePersonResponse")
-    @Action(input = "http://soap.dataservice.myhealthylife/DataService/deletePersonRequest", output = "http://soap.dataservice.myhealthylife/DataService/deletePersonResponse")
-    public long deletePerson(
-        @WebParam(name = "arg0", targetNamespace = "")
-        long arg0);
 
     /**
      * 
@@ -95,6 +65,21 @@ public interface DataService {
     public Person updatePerson(
         @WebParam(name = "arg0", targetNamespace = "")
         Person arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns long
+     */
+    @WebMethod
+    @WebResult(name = "idPerson", targetNamespace = "")
+    @RequestWrapper(localName = "deletePerson", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.DeletePerson")
+    @ResponseWrapper(localName = "deletePersonResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.DeletePersonResponse")
+    @Action(input = "http://soap.dataservice.myhealthylife/DataService/deletePersonRequest", output = "http://soap.dataservice.myhealthylife/DataService/deletePersonResponse")
+    public long deletePerson(
+        @WebParam(name = "arg0", targetNamespace = "")
+        long arg0);
 
     /**
      * 
@@ -206,5 +191,35 @@ public interface DataService {
     public Person getPersonByTelegramUsername(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns myhealthylife.dataservice.soap.MeasureHistory
+     */
+    @WebMethod
+    @WebResult(name = "measureHistory", targetNamespace = "")
+    @RequestWrapper(localName = "getMeasureHistory", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetMeasureHistory")
+    @ResponseWrapper(localName = "getMeasureHistoryResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetMeasureHistoryResponse")
+    @Action(input = "http://soap.dataservice.myhealthylife/DataService/getMeasureHistoryRequest", output = "http://soap.dataservice.myhealthylife/DataService/getMeasureHistoryResponse")
+    public MeasureHistory getMeasureHistory(
+        @WebParam(name = "arg0", targetNamespace = "")
+        long arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns myhealthylife.dataservice.soap.Person
+     */
+    @WebMethod
+    @WebResult(name = "person", targetNamespace = "")
+    @RequestWrapper(localName = "register", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.Register")
+    @ResponseWrapper(localName = "registerResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.RegisterResponse")
+    @Action(input = "http://soap.dataservice.myhealthylife/DataService/registerRequest", output = "http://soap.dataservice.myhealthylife/DataService/registerResponse")
+    public Person register(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Person arg0);
 
 }
