@@ -2,6 +2,9 @@ package myhealthylife.centric1.util;
 
 import javax.ws.rs.core.Response;
 
+import myhealthylife.dataservice.soap.DataService;
+import myhealthylife.dataservice.soap.DataService_Service;
+
 public class Utilities {
 	  	
 	public static Response throwResourceNotFound(){
@@ -9,7 +12,13 @@ public class Utilities {
     }
 	    
     public static Response throwOK(Object o){
-    	//TODO check if code is ccorrect
+    	//TODO check if code is correct
     	return Response.status(Response.Status.OK).entity(o).build();
     }
+    
+    public static DataService getDataServiceConnection() {
+		DataService_Service service=new DataService_Service();
+		DataService ds=service.getDataServiceImplPort();
+		return ds;
+	}
 }
