@@ -20,7 +20,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *       &lt;sequence>
  *         &lt;element name="dateRegistered" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="measureType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="measureValue" type="{http://www.w3.org/2001/XMLSchema}double"/>
+ *         &lt;element name="measureValue" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
  *         &lt;element name="mid" type="{http://www.w3.org/2001/XMLSchema}long"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -42,7 +42,7 @@ public class Measure {
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar dateRegistered;
     protected String measureType;
-    protected double measureValue;
+    protected Double measureValue;
     protected long mid;
 
     /**
@@ -96,16 +96,24 @@ public class Measure {
     /**
      * Gets the value of the measureValue property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
-    public double getMeasureValue() {
+    public Double getMeasureValue() {
         return measureValue;
     }
 
     /**
      * Sets the value of the measureValue property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
-    public void setMeasureValue(double value) {
+    public void setMeasureValue(Double value) {
         this.measureValue = value;
     }
 
