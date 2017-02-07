@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -154,6 +155,34 @@ public class UserMeasuresHandler {
         
         // Returns the measure just created
 		return Utilities.throwOK(mCreated);
+        
+	}
+	
+	
+	
+	@Path("/{username}/{mid}")
+	@DELETE
+    @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
+	public Response deleteMeasure(@PathParam("username") String username, @PathParam("mid") Integer mid) {
+		
+		DataService ds = ServicesLocator.getDataServiceConnection();
+		
+        // Gets the person related to that username
+        Person person = ds.getPersonByUsername(username);
+        
+        Measure measureToDelete = ds.getMeasure(mid);
+        
+        // If the username does not exist it throws an error
+        if(person==null || measureToDelete==null) {
+			return Utilities.throwResourceNotFound();
+        }
+		
+        // Deletes the measure
+        ds.deleteMeasure(person.getIdPerson(), measureToDelete.getMid());
+        
+        // Returns the measure identifier
+		return Utilities.throwOK(mid);
         
 	}
 	
