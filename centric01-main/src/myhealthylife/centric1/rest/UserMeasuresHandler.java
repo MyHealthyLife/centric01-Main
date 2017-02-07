@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -121,6 +122,38 @@ public class UserMeasuresHandler {
         
         // Returns the measure just updated
 		return Utilities.throwOK(mUpdated);
+        
+	}
+	
+	
+	
+	
+	@Path("/{username}")
+	@POST
+    @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
+	public Response createMeasure(Measure measureToCreate, @PathParam("username") String username) {
+		
+		DataService ds = ServicesLocator.getDataServiceConnection();
+		
+        // Gets the person related to that username
+        Person person = ds.getPersonByUsername(username);
+        
+        // If the username does not exist it throws an error
+        if(person==null || measureToCreate==null) {
+			return Utilities.throwResourceNotFound();
+        }
+		
+        
+        if(measureToCreate.getDateRegistered()==null || measureToCreate.getMeasureType()==null) {
+        	return Utilities.throwBadRequest();
+        }
+        
+        // Creates the measure
+        Measure mCreated = ds.saveMeasure(person.getIdPerson(), measureToCreate);
+        
+        // Returns the measure just created
+		return Utilities.throwOK(mCreated);
         
 	}
 	
