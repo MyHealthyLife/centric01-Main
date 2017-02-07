@@ -1,6 +1,7 @@
 package myhealthylife.centric1.rest;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -45,8 +46,41 @@ public class DataHandler {
 		if(stored==null)
 			return Utilities.throwResourceNotFound();
 		
+		if(p.getBirthdate()!=null)
+			stored.setBirthdate(p.getBirthdate());
 		
+		if(p.getFirstname()!=null)
+			stored.setFirstname(p.getFirstname());
 		
-		return null;
+		if(p.getLastname()!=null)
+			stored.setLastname(p.getLastname());
+		
+		if(p.getPassword()!=null)
+			stored.setPassword(p.getPassword());
+		
+		if(p.getTelegramUsername()!=null)
+			stored.setTelegramUsername(p.getTelegramUsername());
+		
+		if(p.getUsername()!=null)
+			stored.setUsername(p.getUsername());
+		
+		Person updated=ds.updatePerson(stored);
+		
+		if(updated==null)
+			return Utilities.throwResourceNotFound();
+		
+		return Utilities.throwOK(updated);
 	}
+	
+	@DELETE
+	@Path("/{username}")//the username in path in this way also the username of the person can be update by the body
+    @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
+	public Response deleteUserInformations(@PathParam("username") String username){
+		Person p=ServicesLocator.getDataServiceConnection().getPersonByUsername(username);
+		long id=ServicesLocator.getDataServiceConnection().deletePerson(p.getIdPerson());
+		
+		return Utilities.throwOK(id);
+	}
+	
 }
