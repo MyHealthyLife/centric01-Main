@@ -8,7 +8,7 @@ import myhealthylife.dataservice.soap.DataService_Service;
 public class Utilities {
 	  	
 	public static Response throwResourceNotFound(){
-    	return Response.status(Response.Status.NO_CONTENT).build();
+    	return Response.status(Response.Status.NOT_FOUND).build();
     }
 	    
     public static Response throwOK(Object o){
