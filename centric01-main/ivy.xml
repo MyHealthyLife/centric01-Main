@@ -39,8 +39,9 @@
 		<dependency org="junit" name="junit" rev="4.12"/>
 		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 		<dependency org="org.postgresql" name="postgresql" rev="9.4.1212.jre7"/>
-		
-	
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-math3 -->
+		<dependency org="org.apache.commons" name="commons-math3" rev="3.2"/>
+
 	
 	
          
