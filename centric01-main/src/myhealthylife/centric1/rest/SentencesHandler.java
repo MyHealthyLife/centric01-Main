@@ -124,9 +124,13 @@ public class SentencesHandler {
         }
 		
         
-        String preferredType = this.getPreferredSentenceType(lastMeasures, measureTypes);
+        List<String> preferredType = this.getPreferredSentenceType(lastMeasures, measureTypes);
+        String preferredTypeName = preferredType.get(0);
+        Boolean preferredTypeTrend = Boolean.valueOf(preferredType.get(1));
         
-        Sentence sentenceToReturn = ss.readRandomSentenceByType(preferredType);
+        
+        // Gets the sentence to return
+        Sentence sentenceToReturn = ss.readRandomSentenceByTypeAndTrend(preferredTypeName, preferredTypeTrend);
         
         if(sentenceToReturn==null) {
         	sentenceToReturn = ss.readRandomSentence();
@@ -155,7 +159,7 @@ public class SentencesHandler {
 	}
 	
 	
-	private String getPreferredSentenceType(ArrayList<ArrayList<Double>> lastMeasures, List<String> measureTypes) {
+	private List<String> getPreferredSentenceType(ArrayList<ArrayList<Double>> lastMeasures, List<String> measureTypes) {
 		
 		
 		List<Double> slopes = new ArrayList<>();
@@ -188,9 +192,21 @@ public class SentencesHandler {
 			
 		}
 		
+		List<String> returnValues = new ArrayList<>();
+		
         int index = this.findIndexOfMaxValue(slopes);
         System.out.println("Index: " + measureTypes.get(index));
-    	return measureTypes.get(index);
+        
+        returnValues.add(measureTypes.get(index));
+        
+        if(slopes.get(index)<0) {
+        	returnValues.add("false");
+        }
+        else {
+        	returnValues.add("true");
+        }
+        
+    	return returnValues;
 	}
 	
 	
