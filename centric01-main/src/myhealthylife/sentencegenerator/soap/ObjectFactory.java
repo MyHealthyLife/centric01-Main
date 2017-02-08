@@ -27,6 +27,7 @@ public class ObjectFactory {
     private final static QName _Sentence_QNAME = new QName("http://soap.sentencegenerator.myhealthylife/", "sentence");
     private final static QName _UpdateSentenceResponse_QNAME = new QName("http://soap.sentencegenerator.myhealthylife/", "updateSentenceResponse");
     private final static QName _CreateSentenceType_QNAME = new QName("http://soap.sentencegenerator.myhealthylife/", "createSentenceType");
+    private final static QName _ReadRandomSentenceByTypeAndTrend_QNAME = new QName("http://soap.sentencegenerator.myhealthylife/", "readRandomSentenceByTypeAndTrend");
     private final static QName _UpdateSentence_QNAME = new QName("http://soap.sentencegenerator.myhealthylife/", "updateSentence");
     private final static QName _SentenceTypes_QNAME = new QName("http://soap.sentencegenerator.myhealthylife/", "sentenceTypes");
     private final static QName _SetSentenceTypeResponse_QNAME = new QName("http://soap.sentencegenerator.myhealthylife/", "setSentenceTypeResponse");
@@ -41,6 +42,7 @@ public class ObjectFactory {
     private final static QName _Sentences_QNAME = new QName("http://soap.sentencegenerator.myhealthylife/", "sentences");
     private final static QName _DeleteSentence_QNAME = new QName("http://soap.sentencegenerator.myhealthylife/", "deleteSentence");
     private final static QName _ReadSentenceTypeList_QNAME = new QName("http://soap.sentencegenerator.myhealthylife/", "readSentenceTypeList");
+    private final static QName _ReadRandomSentenceByTypeAndTrendResponse_QNAME = new QName("http://soap.sentencegenerator.myhealthylife/", "readRandomSentenceByTypeAndTrendResponse");
     private final static QName _DeleteSentenceType_QNAME = new QName("http://soap.sentencegenerator.myhealthylife/", "deleteSentenceType");
     private final static QName _ReadSentenceTypeListResponse_QNAME = new QName("http://soap.sentencegenerator.myhealthylife/", "readSentenceTypeListResponse");
     private final static QName _CreateSentenceResponse_QNAME = new QName("http://soap.sentencegenerator.myhealthylife/", "createSentenceResponse");
@@ -104,6 +106,14 @@ public class ObjectFactory {
      */
     public DeleteSentence createDeleteSentence() {
         return new DeleteSentence();
+    }
+
+    /**
+     * Create an instance of {@link ReadRandomSentenceByTypeAndTrendResponse }
+     * 
+     */
+    public ReadRandomSentenceByTypeAndTrendResponse createReadRandomSentenceByTypeAndTrendResponse() {
+        return new ReadRandomSentenceByTypeAndTrendResponse();
     }
 
     /**
@@ -203,6 +213,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ReadRandomSentenceByTypeAndTrend }
+     * 
+     */
+    public ReadRandomSentenceByTypeAndTrend createReadRandomSentenceByTypeAndTrend() {
+        return new ReadRandomSentenceByTypeAndTrend();
+    }
+
+    /**
      * Create an instance of {@link SentenceTypeList }
      * 
      */
@@ -291,6 +309,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.sentencegenerator.myhealthylife/", name = "createSentenceType")
     public JAXBElement<CreateSentenceType> createCreateSentenceType(CreateSentenceType value) {
         return new JAXBElement<CreateSentenceType>(_CreateSentenceType_QNAME, CreateSentenceType.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReadRandomSentenceByTypeAndTrend }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.sentencegenerator.myhealthylife/", name = "readRandomSentenceByTypeAndTrend")
+    public JAXBElement<ReadRandomSentenceByTypeAndTrend> createReadRandomSentenceByTypeAndTrend(ReadRandomSentenceByTypeAndTrend value) {
+        return new JAXBElement<ReadRandomSentenceByTypeAndTrend>(_ReadRandomSentenceByTypeAndTrend_QNAME, ReadRandomSentenceByTypeAndTrend.class, null, value);
     }
 
     /**
@@ -417,6 +444,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.sentencegenerator.myhealthylife/", name = "readSentenceTypeList")
     public JAXBElement<ReadSentenceTypeList> createReadSentenceTypeList(ReadSentenceTypeList value) {
         return new JAXBElement<ReadSentenceTypeList>(_ReadSentenceTypeList_QNAME, ReadSentenceTypeList.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReadRandomSentenceByTypeAndTrendResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.sentencegenerator.myhealthylife/", name = "readRandomSentenceByTypeAndTrendResponse")
+    public JAXBElement<ReadRandomSentenceByTypeAndTrendResponse> createReadRandomSentenceByTypeAndTrendResponse(ReadRandomSentenceByTypeAndTrendResponse value) {
+        return new JAXBElement<ReadRandomSentenceByTypeAndTrendResponse>(_ReadRandomSentenceByTypeAndTrendResponse_QNAME, ReadRandomSentenceByTypeAndTrendResponse.class, null, value);
     }
 
     /**
