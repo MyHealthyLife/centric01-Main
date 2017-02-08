@@ -15,6 +15,7 @@ import javax.ws.rs.core.Response;
 
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
+import jersey.repackaged.com.google.common.collect.Lists;
 import myhealthylife.centric1.util.ServicesLocator;
 import myhealthylife.centric1.util.Utilities;
 import myhealthylife.dataservice.soap.CurrentHealth;
@@ -123,9 +124,16 @@ public class SentencesHandler {
         }
 		
         
-		
+        String preferredType = this.getPreferredSentenceType(lastMeasures, measureTypes);
+        
+        Sentence sentenceToReturn = ss.readRandomSentenceByType(preferredType);
+        
+        if(sentenceToReturn==null) {
+        	sentenceToReturn = ss.readRandomSentence();
+        }
+        
         // Returns the random sentence
-		return Utilities.throwOK(lastMeasures);
+		return Utilities.throwOK(sentenceToReturn);
         
 	}
 	
@@ -134,7 +142,7 @@ public class SentencesHandler {
 		
 		for(int i=0;i<measureTypesInsertedCount.size();i++) {
 			
-			if(measureTypesInsertedCount.get(i)>2) {
+			if(measureTypesInsertedCount.get(i)>4) {
 				
 				Boolean enough = measureTypesInserted.get(i);
 				enough = true;
@@ -147,25 +155,59 @@ public class SentencesHandler {
 	}
 	
 	
-	private String getPreferredSentenceType(List<Double> dataList) {
+	private String getPreferredSentenceType(ArrayList<ArrayList<Double>> lastMeasures, List<String> measureTypes) {
 		
-		// Creating regression object, passing true to have intercept term
-        SimpleRegression simpleRegression = new SimpleRegression(true);
-
-        // Passing data to the model
-        for(int i=0;i<dataList.size();i++) {
-        	//simpleRegression.addData();
-        }
-
-        // querying for model parameters
-        System.out.println("slope = " + simpleRegression.getSlope());
-        System.out.println("intercept = " + simpleRegression.getIntercept());
-
-        // trying to run model for unknown data
-        System.out.println("prediction for 1.5 = " + simpleRegression.predict(1.5));
 		
+		List<Double> slopes = new ArrayList<>();
+		
+		for(int i=0;i<lastMeasures.size();i++) {
 
-    	return null;
+			List<Double> dataList = Lists.reverse(lastMeasures.get(i));
+			
+			// Creating regression object, passing true to have intercept term
+	        SimpleRegression simpleRegression = new SimpleRegression(true);
+	
+	        // Passing data to the model
+	        for(int j=0;j<dataList.size();j++) {
+	        	System.out.println("Added: " + dataList.get(j));
+	        	simpleRegression.addData(j,dataList.get(j));
+	        }
+	
+	        
+	        // Querying for model parameters
+	        System.out.println("slope = " + simpleRegression.getSlope());
+	        Double singleSlope = simpleRegression.getSlope();
+	        
+        	
+        	slopes.add(singleSlope);
+	        
+	        //System.out.println("intercept = " + simpleRegression.getIntercept());
+	
+	        // Trying to run model for unknown data
+	        //System.out.println("prediction for 1.5 = " + simpleRegression.predict(1.5));
+			
+		}
+		
+        int index = this.findIndexOfMaxValue(slopes);
+        System.out.println("Index: " + measureTypes.get(index));
+    	return measureTypes.get(index);
+	}
+	
+	
+	public int findIndexOfMaxValue(List<Double> slopes) {
+	    
+
+	    int maxIndex = 0;
+	    for (int i=1;i<slopes.size()-1;i++) {
+	        double newnumber = Math.abs(slopes.get(i));
+	        if ((newnumber > Math.abs(slopes.get(maxIndex)))) {
+	            maxIndex = i;
+	        }
+	    }
+	    
+	    System.out.println(maxIndex);
+
+	    return maxIndex;
 	}
 	
 }
