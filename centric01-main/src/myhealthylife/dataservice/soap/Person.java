@@ -24,6 +24,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="idPerson" type="{http://www.w3.org/2001/XMLSchema}long"/>
  *         &lt;element name="lastname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="sex" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="telegramUsername" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
@@ -42,6 +43,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "idPerson",
     "lastname",
     "password",
+    "sex",
     "telegramUsername",
     "username"
 })
@@ -54,6 +56,7 @@ public class Person {
     protected long idPerson;
     protected String lastname;
     protected String password;
+    protected String sex;
     protected String telegramUsername;
     protected String username;
 
@@ -191,6 +194,30 @@ public class Person {
      */
     public void setPassword(String value) {
         this.password = value;
+    }
+
+    /**
+     * Gets the value of the sex property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSex() {
+        return sex;
+    }
+
+    /**
+     * Sets the value of the sex property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSex(String value) {
+        this.sex = value;
     }
 
     /**

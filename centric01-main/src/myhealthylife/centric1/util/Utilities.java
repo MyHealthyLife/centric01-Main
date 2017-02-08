@@ -1,6 +1,10 @@
 package myhealthylife.centric1.util;
 
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import javax.ws.rs.core.Response;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 import myhealthylife.dataservice.soap.DataService;
 import myhealthylife.dataservice.soap.DataService_Service;
@@ -20,8 +24,25 @@ public class Utilities {
     	return Response.status(Response.Status.BAD_REQUEST).build();
     }
     
+    public static Response throwNoContent(){
+    	return Response.status(Response.Status.NO_CONTENT).build();
+    }
+    
     public static Response throwConflict(){
     	return Response.status(Response.Status.CONFLICT).build();
+    }
+    
+    
+    public static int getAgeByDateOfBorn(XMLGregorianCalendar bornDate){
+    	
+    	Date date=new Date(System.currentTimeMillis());
+    	GregorianCalendar now=new GregorianCalendar();
+    	now.setTime(date);
+    	
+    	GregorianCalendar bDate=new GregorianCalendar();
+    	bDate.setTime(new Date(bornDate.getMillisecond()));
+    	
+    	return now.get(GregorianCalendar.YEAR)-bDate.get(GregorianCalendar.YEAR);
     }
     
 }
