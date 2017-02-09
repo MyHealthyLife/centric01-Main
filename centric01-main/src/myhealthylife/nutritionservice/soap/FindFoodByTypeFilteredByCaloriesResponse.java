@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per findFoodByType complex type.
+ * <p>Classe Java per findFoodByTypeFilteredByCaloriesResponse complex type.
  * 
  * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
- * &lt;complexType name="findFoodByType">
+ * &lt;complexType name="findFoodByTypeFilteredByCaloriesResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="typeName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="foodList" type="{http://soap.nutritionservice.myhealthylife/}foodList" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -26,35 +26,35 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "findFoodByType", propOrder = {
-    "typeName"
+@XmlType(name = "findFoodByTypeFilteredByCaloriesResponse", propOrder = {
+    "foodList"
 })
-public class FindFoodByType {
+public class FindFoodByTypeFilteredByCaloriesResponse {
 
-    protected String typeName;
+    protected FoodList foodList;
 
     /**
-     * Recupera il valore della proprietà typeName.
+     * Recupera il valore della proprietà foodList.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link FoodList }
      *     
      */
-    public String getTypeName() {
-        return typeName;
+    public FoodList getFoodList() {
+        return foodList;
     }
 
     /**
-     * Imposta il valore della proprietà typeName.
+     * Imposta il valore della proprietà foodList.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link FoodList }
      *     
      */
-    public void setTypeName(String value) {
-        this.typeName = value;
+    public void setFoodList(FoodList value) {
+        this.foodList = value;
     }
 
 }

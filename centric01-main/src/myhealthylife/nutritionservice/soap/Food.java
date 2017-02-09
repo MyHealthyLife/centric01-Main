@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for food complex type.
+ * <p>Classe Java per food complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
  * &lt;complexType name="food">
@@ -43,7 +43,7 @@ public class Food {
     protected FoodType foodType;
 
     /**
-     * Gets the value of the idFood property.
+     * Recupera il valore della proprietà idFood.
      * 
      */
     public long getIdFood() {
@@ -51,7 +51,7 @@ public class Food {
     }
 
     /**
-     * Sets the value of the idFood property.
+     * Imposta il valore della proprietà idFood.
      * 
      */
     public void setIdFood(long value) {
@@ -59,7 +59,7 @@ public class Food {
     }
 
     /**
-     * Gets the value of the name property.
+     * Recupera il valore della proprietà name.
      * 
      * @return
      *     possible object is
@@ -71,7 +71,7 @@ public class Food {
     }
 
     /**
-     * Sets the value of the name property.
+     * Imposta il valore della proprietà name.
      * 
      * @param value
      *     allowed object is
@@ -83,7 +83,7 @@ public class Food {
     }
 
     /**
-     * Gets the value of the calories property.
+     * Recupera il valore della proprietà calories.
      * 
      * @return
      *     possible object is
@@ -95,7 +95,7 @@ public class Food {
     }
 
     /**
-     * Sets the value of the calories property.
+     * Imposta il valore della proprietà calories.
      * 
      * @param value
      *     allowed object is
@@ -107,7 +107,7 @@ public class Food {
     }
 
     /**
-     * Gets the value of the foodType property.
+     * Recupera il valore della proprietà foodType.
      * 
      * @return
      *     possible object is
@@ -119,7 +119,7 @@ public class Food {
     }
 
     /**
-     * Sets the value of the foodType property.
+     * Imposta il valore della proprietà foodType.
      * 
      * @param value
      *     allowed object is

@@ -7,16 +7,15 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per findFoodByTypeFiltered complex type.
+ * <p>Classe Java per findFoodByTypeFilteredByCalories complex type.
  * 
  * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
- * &lt;complexType name="findFoodByTypeFiltered">
+ * &lt;complexType name="findFoodByTypeFilteredByCalories">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="typeName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="maxCal" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -27,38 +26,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "findFoodByTypeFiltered", propOrder = {
-    "typeName",
+@XmlType(name = "findFoodByTypeFilteredByCalories", propOrder = {
     "maxCal"
 })
-public class FindFoodByTypeFiltered {
+public class FindFoodByTypeFilteredByCalories {
 
-    protected String typeName;
     protected Integer maxCal;
-
-    /**
-     * Recupera il valore della proprietà typeName.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTypeName() {
-        return typeName;
-    }
-
-    /**
-     * Imposta il valore della proprietà typeName.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTypeName(String value) {
-        this.typeName = value;
-    }
 
     /**
      * Recupera il valore della proprietà maxCal.

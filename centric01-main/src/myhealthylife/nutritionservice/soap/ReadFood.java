@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for readFood complex type.
+ * <p>Classe Java per readFood complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
  * &lt;complexType name="readFood">
@@ -34,7 +34,7 @@ public class ReadFood {
     protected long foodId;
 
     /**
-     * Gets the value of the foodId property.
+     * Recupera il valore della proprietà foodId.
      * 
      */
     public long getFoodId() {
@@ -42,7 +42,7 @@ public class ReadFood {
     }
 
     /**
-     * Sets the value of the foodId property.
+     * Imposta il valore della proprietà foodId.
      * 
      */
     public void setFoodId(long value) {

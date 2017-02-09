@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for createFoodType complex type.
+ * <p>Classe Java per createFoodType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
  * &lt;complexType name="createFoodType">
@@ -34,7 +34,7 @@ public class CreateFoodType {
     protected String typeName;
 
     /**
-     * Gets the value of the typeName property.
+     * Recupera il valore della proprietà typeName.
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class CreateFoodType {
     }
 
     /**
-     * Sets the value of the typeName property.
+     * Imposta il valore della proprietà typeName.
      * 
      * @param value
      *     allowed object is

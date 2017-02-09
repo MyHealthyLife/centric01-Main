@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for readFoodListResponse complex type.
+ * <p>Classe Java per readFoodListResponse complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
  * &lt;complexType name="readFoodListResponse">
@@ -34,7 +34,7 @@ public class ReadFoodListResponse {
     protected FoodList foodList;
 
     /**
-     * Gets the value of the foodList property.
+     * Recupera il valore della proprietà foodList.
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class ReadFoodListResponse {
     }
 
     /**
-     * Sets the value of the foodList property.
+     * Imposta il valore della proprietà foodList.
      * 
      * @param value
      *     allowed object is

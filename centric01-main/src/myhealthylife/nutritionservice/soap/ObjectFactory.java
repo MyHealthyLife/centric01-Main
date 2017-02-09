@@ -24,6 +24,7 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _FindFoodByTypeFilteredByCalories_QNAME = new QName("http://soap.nutritionservice.myhealthylife/", "findFoodByTypeFilteredByCalories");
     private final static QName _ReadFoodTypeList_QNAME = new QName("http://soap.nutritionservice.myhealthylife/", "readFoodTypeList");
     private final static QName _UpdateFoodTypeResponse_QNAME = new QName("http://soap.nutritionservice.myhealthylife/", "updateFoodTypeResponse");
     private final static QName _FindFoodByTypeFiltered_QNAME = new QName("http://soap.nutritionservice.myhealthylife/", "findFoodByTypeFiltered");
@@ -49,6 +50,7 @@ public class ObjectFactory {
     private final static QName _CreateFoodResponse_QNAME = new QName("http://soap.nutritionservice.myhealthylife/", "createFoodResponse");
     private final static QName _SetFoodType_QNAME = new QName("http://soap.nutritionservice.myhealthylife/", "setFoodType");
     private final static QName _DeleteFoodTypeResponse_QNAME = new QName("http://soap.nutritionservice.myhealthylife/", "deleteFoodTypeResponse");
+    private final static QName _FindFoodByTypeFilteredByCaloriesResponse_QNAME = new QName("http://soap.nutritionservice.myhealthylife/", "findFoodByTypeFilteredByCaloriesResponse");
     private final static QName _FoodTypes_QNAME = new QName("http://soap.nutritionservice.myhealthylife/", "foodTypes");
     private final static QName _DeleteFood_QNAME = new QName("http://soap.nutritionservice.myhealthylife/", "deleteFood");
     private final static QName _CreateFoodType_QNAME = new QName("http://soap.nutritionservice.myhealthylife/", "createFoodType");
@@ -122,6 +124,14 @@ public class ObjectFactory {
      */
     public DeleteFoodTypeResponse createDeleteFoodTypeResponse() {
         return new DeleteFoodTypeResponse();
+    }
+
+    /**
+     * Create an instance of {@link FindFoodByTypeFilteredByCaloriesResponse }
+     * 
+     */
+    public FindFoodByTypeFilteredByCaloriesResponse createFindFoodByTypeFilteredByCaloriesResponse() {
+        return new FindFoodByTypeFilteredByCaloriesResponse();
     }
 
     /**
@@ -277,11 +287,28 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link FindFoodByTypeFilteredByCalories }
+     * 
+     */
+    public FindFoodByTypeFilteredByCalories createFindFoodByTypeFilteredByCalories() {
+        return new FindFoodByTypeFilteredByCalories();
+    }
+
+    /**
      * Create an instance of {@link ReadFoodTypeList }
      * 
      */
     public ReadFoodTypeList createReadFoodTypeList() {
         return new ReadFoodTypeList();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindFoodByTypeFilteredByCalories }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.nutritionservice.myhealthylife/", name = "findFoodByTypeFilteredByCalories")
+    public JAXBElement<FindFoodByTypeFilteredByCalories> createFindFoodByTypeFilteredByCalories(FindFoodByTypeFilteredByCalories value) {
+        return new JAXBElement<FindFoodByTypeFilteredByCalories>(_FindFoodByTypeFilteredByCalories_QNAME, FindFoodByTypeFilteredByCalories.class, null, value);
     }
 
     /**
@@ -507,6 +534,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.nutritionservice.myhealthylife/", name = "deleteFoodTypeResponse")
     public JAXBElement<DeleteFoodTypeResponse> createDeleteFoodTypeResponse(DeleteFoodTypeResponse value) {
         return new JAXBElement<DeleteFoodTypeResponse>(_DeleteFoodTypeResponse_QNAME, DeleteFoodTypeResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindFoodByTypeFilteredByCaloriesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.nutritionservice.myhealthylife/", name = "findFoodByTypeFilteredByCaloriesResponse")
+    public JAXBElement<FindFoodByTypeFilteredByCaloriesResponse> createFindFoodByTypeFilteredByCaloriesResponse(FindFoodByTypeFilteredByCaloriesResponse value) {
+        return new JAXBElement<FindFoodByTypeFilteredByCaloriesResponse>(_FindFoodByTypeFilteredByCaloriesResponse_QNAME, FindFoodByTypeFilteredByCaloriesResponse.class, null, value);
     }
 
     /**

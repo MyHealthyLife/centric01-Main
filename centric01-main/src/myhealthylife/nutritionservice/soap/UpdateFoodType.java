@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for updateFoodType complex type.
+ * <p>Classe Java per updateFoodType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
  * &lt;complexType name="updateFoodType">
@@ -34,7 +34,7 @@ public class UpdateFoodType {
     protected FoodType foodType;
 
     /**
-     * Gets the value of the foodType property.
+     * Recupera il valore della proprietà foodType.
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class UpdateFoodType {
     }
 
     /**
-     * Sets the value of the foodType property.
+     * Imposta il valore della proprietà foodType.
      * 
      * @param value
      *     allowed object is

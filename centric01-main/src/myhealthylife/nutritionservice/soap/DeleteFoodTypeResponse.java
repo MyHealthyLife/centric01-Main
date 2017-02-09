@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for deleteFoodTypeResponse complex type.
+ * <p>Classe Java per deleteFoodTypeResponse complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
  * &lt;complexType name="deleteFoodTypeResponse">
@@ -34,7 +34,7 @@ public class DeleteFoodTypeResponse {
     protected long idFoodType;
 
     /**
-     * Gets the value of the idFoodType property.
+     * Recupera il valore della proprietà idFoodType.
      * 
      */
     public long getIdFoodType() {
@@ -42,7 +42,7 @@ public class DeleteFoodTypeResponse {
     }
 
     /**
-     * Sets the value of the idFoodType property.
+     * Imposta il valore della proprietà idFoodType.
      * 
      */
     public void setIdFoodType(long value) {
