@@ -28,7 +28,8 @@ import myhealthylife.sentencegenerator.soap.Sentences;
 @Path("/recipe")
 public class FoodHandler {
 
-		
+
+	@Path("/{username}")
 	@GET
 	@Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
@@ -107,8 +108,8 @@ public class FoodHandler {
         	maxCal = null;
         }
         
-        // Gets the food to return
-        FoodList foodListToReturn = fs.findFoodByTypeFiltered(null, maxCal);
+        // Gets the foods to return
+        FoodList foodListToReturn = fs.findFoodByTypeFilteredByCalories(maxCal);
         
         if(foodListToReturn==null) {
         	foodListToReturn = fs.readFoodList();
