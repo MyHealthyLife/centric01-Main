@@ -30,30 +30,106 @@ public class ObjectFactory {
     private final static QName _UpdateAgeRange_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "updateAgeRange");
     private final static QName _ReadOptimalParametersResponse_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "readOptimalParametersResponse");
     private final static QName _UpdateParameter_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "updateParameter");
-    private final static QName _ReadAgeRangesResponse_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "readAgeRangesResponse");
-    private final static QName _Parameter_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "parameter");
     private final static QName _ReadOptimalParameters_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "readOptimalParameters");
     private final static QName _ReadAgeRanges_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "readAgeRanges");
     private final static QName _ReadOptimalParametersByNameAgeAndSexResponse_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "readOptimalParametersByNameAgeAndSexResponse");
-    private final static QName _ReadOptimalParametersByAgeAndSex_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "readOptimalParametersByAgeAndSex");
-    private final static QName _AgeRange_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "age_range");
     private final static QName _CreateParameterResponse_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "createParameterResponse");
     private final static QName _DeleteAgeRange_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "deleteAgeRange");
     private final static QName _AgeRangeList_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "AgeRangeList");
     private final static QName _CreateParameter_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "createParameter");
-    private final static QName _DeleteAgeRangeResponse_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "deleteAgeRangeResponse");
+    private final static QName _ReadOptimalParametersBySexAngAgeRangeResponse_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "readOptimalParametersBySexAngAgeRangeResponse");
     private final static QName _CreateAgeRangeResponse_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "createAgeRangeResponse");
     private final static QName _UpdateAgeRangeResponse_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "updateAgeRangeResponse");
     private final static QName _DeleteParameter_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "deleteParameter");
     private final static QName _CreateAgeRange_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "createAgeRange");
-    private final static QName _ReadOptimalParametersByAgeAndSexResponse_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "readOptimalParametersByAgeAndSexResponse");
     private final static QName _UpdateParameterResponse_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "updateParameterResponse");
+    private final static QName _ReadAgeRangesResponse_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "readAgeRangesResponse");
+    private final static QName _Parameter_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "parameter");
+    private final static QName _ReadOptimalParametersBySex_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "readOptimalParametersBySex");
+    private final static QName _ReadOptimalParametersByAgeAndSex_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "readOptimalParametersByAgeAndSex");
+    private final static QName _AgeRange_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "age_range");
+    private final static QName _DeleteAgeRangeResponse_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "deleteAgeRangeResponse");
+    private final static QName _ReadOptimalParametersBySexResponse_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "readOptimalParametersBySexResponse");
+    private final static QName _ReadOptimalParametersBySexAngAgeRange_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "readOptimalParametersBySexAngAgeRange");
+    private final static QName _ReadOptimalParametersByAgeAndSexResponse_QNAME = new QName("http://soap.optimalparamters.myhealtylife/", "readOptimalParametersByAgeAndSexResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: myhealtylife.optimalparamters.soap
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link ReadOptimalParametersBySexAngAgeRange }
+     * 
+     */
+    public ReadOptimalParametersBySexAngAgeRange createReadOptimalParametersBySexAngAgeRange() {
+        return new ReadOptimalParametersBySexAngAgeRange();
+    }
+
+    /**
+     * Create an instance of {@link ReadOptimalParametersByAgeAndSexResponse }
+     * 
+     */
+    public ReadOptimalParametersByAgeAndSexResponse createReadOptimalParametersByAgeAndSexResponse() {
+        return new ReadOptimalParametersByAgeAndSexResponse();
+    }
+
+    /**
+     * Create an instance of {@link DeleteAgeRangeResponse }
+     * 
+     */
+    public DeleteAgeRangeResponse createDeleteAgeRangeResponse() {
+        return new DeleteAgeRangeResponse();
+    }
+
+    /**
+     * Create an instance of {@link ReadOptimalParametersBySexResponse }
+     * 
+     */
+    public ReadOptimalParametersBySexResponse createReadOptimalParametersBySexResponse() {
+        return new ReadOptimalParametersBySexResponse();
+    }
+
+    /**
+     * Create an instance of {@link AgeRange }
+     * 
+     */
+    public AgeRange createAgeRange() {
+        return new AgeRange();
+    }
+
+    /**
+     * Create an instance of {@link ReadOptimalParametersBySex }
+     * 
+     */
+    public ReadOptimalParametersBySex createReadOptimalParametersBySex() {
+        return new ReadOptimalParametersBySex();
+    }
+
+    /**
+     * Create an instance of {@link ReadOptimalParametersByAgeAndSex }
+     * 
+     */
+    public ReadOptimalParametersByAgeAndSex createReadOptimalParametersByAgeAndSex() {
+        return new ReadOptimalParametersByAgeAndSex();
+    }
+
+    /**
+     * Create an instance of {@link ReadAgeRangesResponse }
+     * 
+     */
+    public ReadAgeRangesResponse createReadAgeRangesResponse() {
+        return new ReadAgeRangesResponse();
+    }
+
+    /**
+     * Create an instance of {@link Parameter }
+     * 
+     */
+    public Parameter createParameter() {
+        return new Parameter();
     }
 
     /**
@@ -70,14 +146,6 @@ public class ObjectFactory {
      */
     public CreateAgeRange createCreateAgeRange() {
         return new CreateAgeRange();
-    }
-
-    /**
-     * Create an instance of {@link ReadOptimalParametersByAgeAndSexResponse }
-     * 
-     */
-    public ReadOptimalParametersByAgeAndSexResponse createReadOptimalParametersByAgeAndSexResponse() {
-        return new ReadOptimalParametersByAgeAndSexResponse();
     }
 
     /**
@@ -105,11 +173,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DeleteAgeRangeResponse }
+     * Create an instance of {@link ReadOptimalParametersBySexAngAgeRangeResponse }
      * 
      */
-    public DeleteAgeRangeResponse createDeleteAgeRangeResponse() {
-        return new DeleteAgeRangeResponse();
+    public ReadOptimalParametersBySexAngAgeRangeResponse createReadOptimalParametersBySexAngAgeRangeResponse() {
+        return new ReadOptimalParametersBySexAngAgeRangeResponse();
     }
 
     /**
@@ -145,14 +213,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AgeRange }
-     * 
-     */
-    public AgeRange createAgeRange() {
-        return new AgeRange();
-    }
-
-    /**
      * Create an instance of {@link ReadAgeRanges }
      * 
      */
@@ -166,30 +226,6 @@ public class ObjectFactory {
      */
     public ReadOptimalParametersByNameAgeAndSexResponse createReadOptimalParametersByNameAgeAndSexResponse() {
         return new ReadOptimalParametersByNameAgeAndSexResponse();
-    }
-
-    /**
-     * Create an instance of {@link ReadOptimalParametersByAgeAndSex }
-     * 
-     */
-    public ReadOptimalParametersByAgeAndSex createReadOptimalParametersByAgeAndSex() {
-        return new ReadOptimalParametersByAgeAndSex();
-    }
-
-    /**
-     * Create an instance of {@link ReadAgeRangesResponse }
-     * 
-     */
-    public ReadAgeRangesResponse createReadAgeRangesResponse() {
-        return new ReadAgeRangesResponse();
-    }
-
-    /**
-     * Create an instance of {@link Parameter }
-     * 
-     */
-    public Parameter createParameter() {
-        return new Parameter();
     }
 
     /**
@@ -303,24 +339,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ReadAgeRangesResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "readAgeRangesResponse")
-    public JAXBElement<ReadAgeRangesResponse> createReadAgeRangesResponse(ReadAgeRangesResponse value) {
-        return new JAXBElement<ReadAgeRangesResponse>(_ReadAgeRangesResponse_QNAME, ReadAgeRangesResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Parameter }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "parameter")
-    public JAXBElement<Parameter> createParameter(Parameter value) {
-        return new JAXBElement<Parameter>(_Parameter_QNAME, Parameter.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ReadOptimalParameters }{@code >}}
      * 
      */
@@ -345,24 +363,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "readOptimalParametersByNameAgeAndSexResponse")
     public JAXBElement<ReadOptimalParametersByNameAgeAndSexResponse> createReadOptimalParametersByNameAgeAndSexResponse(ReadOptimalParametersByNameAgeAndSexResponse value) {
         return new JAXBElement<ReadOptimalParametersByNameAgeAndSexResponse>(_ReadOptimalParametersByNameAgeAndSexResponse_QNAME, ReadOptimalParametersByNameAgeAndSexResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ReadOptimalParametersByAgeAndSex }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "readOptimalParametersByAgeAndSex")
-    public JAXBElement<ReadOptimalParametersByAgeAndSex> createReadOptimalParametersByAgeAndSex(ReadOptimalParametersByAgeAndSex value) {
-        return new JAXBElement<ReadOptimalParametersByAgeAndSex>(_ReadOptimalParametersByAgeAndSex_QNAME, ReadOptimalParametersByAgeAndSex.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AgeRange }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "age_range")
-    public JAXBElement<AgeRange> createAgeRange(AgeRange value) {
-        return new JAXBElement<AgeRange>(_AgeRange_QNAME, AgeRange.class, null, value);
     }
 
     /**
@@ -402,12 +402,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteAgeRangeResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReadOptimalParametersBySexAngAgeRangeResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "deleteAgeRangeResponse")
-    public JAXBElement<DeleteAgeRangeResponse> createDeleteAgeRangeResponse(DeleteAgeRangeResponse value) {
-        return new JAXBElement<DeleteAgeRangeResponse>(_DeleteAgeRangeResponse_QNAME, DeleteAgeRangeResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "readOptimalParametersBySexAngAgeRangeResponse")
+    public JAXBElement<ReadOptimalParametersBySexAngAgeRangeResponse> createReadOptimalParametersBySexAngAgeRangeResponse(ReadOptimalParametersBySexAngAgeRangeResponse value) {
+        return new JAXBElement<ReadOptimalParametersBySexAngAgeRangeResponse>(_ReadOptimalParametersBySexAngAgeRangeResponse_QNAME, ReadOptimalParametersBySexAngAgeRangeResponse.class, null, value);
     }
 
     /**
@@ -447,21 +447,93 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ReadOptimalParametersByAgeAndSexResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "readOptimalParametersByAgeAndSexResponse")
-    public JAXBElement<ReadOptimalParametersByAgeAndSexResponse> createReadOptimalParametersByAgeAndSexResponse(ReadOptimalParametersByAgeAndSexResponse value) {
-        return new JAXBElement<ReadOptimalParametersByAgeAndSexResponse>(_ReadOptimalParametersByAgeAndSexResponse_QNAME, ReadOptimalParametersByAgeAndSexResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link UpdateParameterResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "updateParameterResponse")
     public JAXBElement<UpdateParameterResponse> createUpdateParameterResponse(UpdateParameterResponse value) {
         return new JAXBElement<UpdateParameterResponse>(_UpdateParameterResponse_QNAME, UpdateParameterResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReadAgeRangesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "readAgeRangesResponse")
+    public JAXBElement<ReadAgeRangesResponse> createReadAgeRangesResponse(ReadAgeRangesResponse value) {
+        return new JAXBElement<ReadAgeRangesResponse>(_ReadAgeRangesResponse_QNAME, ReadAgeRangesResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Parameter }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "parameter")
+    public JAXBElement<Parameter> createParameter(Parameter value) {
+        return new JAXBElement<Parameter>(_Parameter_QNAME, Parameter.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReadOptimalParametersBySex }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "readOptimalParametersBySex")
+    public JAXBElement<ReadOptimalParametersBySex> createReadOptimalParametersBySex(ReadOptimalParametersBySex value) {
+        return new JAXBElement<ReadOptimalParametersBySex>(_ReadOptimalParametersBySex_QNAME, ReadOptimalParametersBySex.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReadOptimalParametersByAgeAndSex }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "readOptimalParametersByAgeAndSex")
+    public JAXBElement<ReadOptimalParametersByAgeAndSex> createReadOptimalParametersByAgeAndSex(ReadOptimalParametersByAgeAndSex value) {
+        return new JAXBElement<ReadOptimalParametersByAgeAndSex>(_ReadOptimalParametersByAgeAndSex_QNAME, ReadOptimalParametersByAgeAndSex.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AgeRange }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "age_range")
+    public JAXBElement<AgeRange> createAgeRange(AgeRange value) {
+        return new JAXBElement<AgeRange>(_AgeRange_QNAME, AgeRange.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteAgeRangeResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "deleteAgeRangeResponse")
+    public JAXBElement<DeleteAgeRangeResponse> createDeleteAgeRangeResponse(DeleteAgeRangeResponse value) {
+        return new JAXBElement<DeleteAgeRangeResponse>(_DeleteAgeRangeResponse_QNAME, DeleteAgeRangeResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReadOptimalParametersBySexResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "readOptimalParametersBySexResponse")
+    public JAXBElement<ReadOptimalParametersBySexResponse> createReadOptimalParametersBySexResponse(ReadOptimalParametersBySexResponse value) {
+        return new JAXBElement<ReadOptimalParametersBySexResponse>(_ReadOptimalParametersBySexResponse_QNAME, ReadOptimalParametersBySexResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReadOptimalParametersBySexAngAgeRange }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "readOptimalParametersBySexAngAgeRange")
+    public JAXBElement<ReadOptimalParametersBySexAngAgeRange> createReadOptimalParametersBySexAngAgeRange(ReadOptimalParametersBySexAngAgeRange value) {
+        return new JAXBElement<ReadOptimalParametersBySexAngAgeRange>(_ReadOptimalParametersBySexAngAgeRange_QNAME, ReadOptimalParametersBySexAngAgeRange.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReadOptimalParametersByAgeAndSexResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.optimalparamters.myhealtylife/", name = "readOptimalParametersByAgeAndSexResponse")
+    public JAXBElement<ReadOptimalParametersByAgeAndSexResponse> createReadOptimalParametersByAgeAndSexResponse(ReadOptimalParametersByAgeAndSexResponse value) {
+        return new JAXBElement<ReadOptimalParametersByAgeAndSexResponse>(_ReadOptimalParametersByAgeAndSexResponse_QNAME, ReadOptimalParametersByAgeAndSexResponse.class, null, value);
     }
 
 }

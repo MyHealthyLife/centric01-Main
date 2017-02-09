@@ -26,30 +26,15 @@ public interface OptimalParameters {
 
     /**
      * 
-     * @param arg0
      * @return
-     *     returns myhealtylife.optimalparamters.soap.Parameter
+     *     returns myhealtylife.optimalparamters.soap.AgeRangeList
      */
     @WebMethod
-    @WebResult(name = "parameter", targetNamespace = "")
-    @RequestWrapper(localName = "createParameter", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.CreateParameter")
-    @ResponseWrapper(localName = "createParameterResponse", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.CreateParameterResponse")
-    @Action(input = "http://soap.optimalparamters.myhealtylife/OptimalParameters/createParameterRequest", output = "http://soap.optimalparamters.myhealtylife/OptimalParameters/createParameterResponse")
-    public Parameter createParameter(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Parameter arg0);
-
-    /**
-     * 
-     * @return
-     *     returns myhealtylife.optimalparamters.soap.ParametersList
-     */
-    @WebMethod
-    @WebResult(name = "parametersList", targetNamespace = "")
-    @RequestWrapper(localName = "readOptimalParameters", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.ReadOptimalParameters")
-    @ResponseWrapper(localName = "readOptimalParametersResponse", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.ReadOptimalParametersResponse")
-    @Action(input = "http://soap.optimalparamters.myhealtylife/OptimalParameters/readOptimalParametersRequest", output = "http://soap.optimalparamters.myhealtylife/OptimalParameters/readOptimalParametersResponse")
-    public ParametersList readOptimalParameters();
+    @WebResult(name = "AgeRangeList", targetNamespace = "")
+    @RequestWrapper(localName = "readAgeRanges", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.ReadAgeRanges")
+    @ResponseWrapper(localName = "readAgeRangesResponse", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.ReadAgeRangesResponse")
+    @Action(input = "http://soap.optimalparamters.myhealtylife/OptimalParameters/readAgeRangesRequest", output = "http://soap.optimalparamters.myhealtylife/OptimalParameters/readAgeRangesResponse")
+    public AgeRangeList readAgeRanges();
 
     /**
      * 
@@ -68,6 +53,18 @@ public interface OptimalParameters {
         Integer arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         String arg1);
+
+    /**
+     * 
+     * @return
+     *     returns myhealtylife.optimalparamters.soap.ParametersList
+     */
+    @WebMethod
+    @WebResult(name = "parametersList", targetNamespace = "")
+    @RequestWrapper(localName = "readOptimalParameters", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.ReadOptimalParameters")
+    @ResponseWrapper(localName = "readOptimalParametersResponse", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.ReadOptimalParametersResponse")
+    @Action(input = "http://soap.optimalparamters.myhealtylife/OptimalParameters/readOptimalParametersRequest", output = "http://soap.optimalparamters.myhealtylife/OptimalParameters/readOptimalParametersResponse")
+    public ParametersList readOptimalParameters();
 
     /**
      * 
@@ -98,6 +95,21 @@ public interface OptimalParameters {
      */
     @WebMethod
     @WebResult(name = "parameter", targetNamespace = "")
+    @RequestWrapper(localName = "createParameter", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.CreateParameter")
+    @ResponseWrapper(localName = "createParameterResponse", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.CreateParameterResponse")
+    @Action(input = "http://soap.optimalparamters.myhealtylife/OptimalParameters/createParameterRequest", output = "http://soap.optimalparamters.myhealtylife/OptimalParameters/createParameterResponse")
+    public Parameter createParameter(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Parameter arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns myhealtylife.optimalparamters.soap.Parameter
+     */
+    @WebMethod
+    @WebResult(name = "parameter", targetNamespace = "")
     @RequestWrapper(localName = "updateParameter", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.UpdateParameter")
     @ResponseWrapper(localName = "updateParameterResponse", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.UpdateParameterResponse")
     @Action(input = "http://soap.optimalparamters.myhealtylife/OptimalParameters/updateParameterRequest", output = "http://soap.optimalparamters.myhealtylife/OptimalParameters/updateParameterResponse")
@@ -119,18 +131,6 @@ public interface OptimalParameters {
     public long deleteParameter(
         @WebParam(name = "arg0", targetNamespace = "")
         long arg0);
-
-    /**
-     * 
-     * @return
-     *     returns myhealtylife.optimalparamters.soap.AgeRangeList
-     */
-    @WebMethod
-    @WebResult(name = "AgeRangeList", targetNamespace = "")
-    @RequestWrapper(localName = "readAgeRanges", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.ReadAgeRanges")
-    @ResponseWrapper(localName = "readAgeRangesResponse", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.ReadAgeRangesResponse")
-    @Action(input = "http://soap.optimalparamters.myhealtylife/OptimalParameters/readAgeRangesRequest", output = "http://soap.optimalparamters.myhealtylife/OptimalParameters/readAgeRangesResponse")
-    public AgeRangeList readAgeRanges();
 
     /**
      * 
@@ -176,5 +176,41 @@ public interface OptimalParameters {
     public long deleteAgeRange(
         @WebParam(name = "arg0", targetNamespace = "")
         long arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns myhealtylife.optimalparamters.soap.ParametersList
+     */
+    @WebMethod
+    @WebResult(name = "parametersList", targetNamespace = "")
+    @RequestWrapper(localName = "readOptimalParametersBySex", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.ReadOptimalParametersBySex")
+    @ResponseWrapper(localName = "readOptimalParametersBySexResponse", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.ReadOptimalParametersBySexResponse")
+    @Action(input = "http://soap.optimalparamters.myhealtylife/OptimalParameters/readOptimalParametersBySexRequest", output = "http://soap.optimalparamters.myhealtylife/OptimalParameters/readOptimalParametersBySexResponse")
+    public ParametersList readOptimalParametersBySex(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg2
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns myhealtylife.optimalparamters.soap.ParametersList
+     */
+    @WebMethod
+    @WebResult(name = "parametersList", targetNamespace = "")
+    @RequestWrapper(localName = "readOptimalParametersBySexAngAgeRange", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.ReadOptimalParametersBySexAngAgeRange")
+    @ResponseWrapper(localName = "readOptimalParametersBySexAngAgeRangeResponse", targetNamespace = "http://soap.optimalparamters.myhealtylife/", className = "myhealtylife.optimalparamters.soap.ReadOptimalParametersBySexAngAgeRangeResponse")
+    @Action(input = "http://soap.optimalparamters.myhealtylife/OptimalParameters/readOptimalParametersBySexAngAgeRangeRequest", output = "http://soap.optimalparamters.myhealtylife/OptimalParameters/readOptimalParametersBySexAngAgeRangeResponse")
+    public ParametersList readOptimalParametersBySexAngAgeRange(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        int arg2);
 
 }
