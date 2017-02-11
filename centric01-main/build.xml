@@ -95,7 +95,7 @@
 
 	<target name="compile" depends="init">
 		<echo message="Compile target has been called" />
-		<javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="lib.path.id" includeAntRuntime="false">
+		<javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="lib.path.id" includeAntRuntime="false" encoding="ISO-8859-1">
 		</javac>
 		<copy todir="${build.dir}" overwrite="true">
 			<fileset dir="${src.dir}">
