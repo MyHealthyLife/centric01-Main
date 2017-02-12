@@ -33,7 +33,19 @@ public class DataHandler {
 		return Utilities.throwOK(p);
 	}
 
-	
+	@GET
+	@Path("/telegram/{username}")
+    @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
+	public Response getPersonByTelegramUsername(@PathParam("username") String username){
+		DataService ds=ServicesLocator.getDataServiceConnection();
+		Person person=ds.getPersonByTelegramUsername(username);
+		
+		if(person==null)
+			return Utilities.throwResourceNotFound();
+		
+		return Utilities.throwOK(person);
+	}
 	
 	@PUT
 	@Path("/{username}")//the username in path in this way also the username of the person can be update by the body
