@@ -25,6 +25,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="lastname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="sex" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="telegramID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="telegramUsername" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
@@ -44,6 +45,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "lastname",
     "password",
     "sex",
+    "telegramID",
     "telegramUsername",
     "username"
 })
@@ -57,6 +59,7 @@ public class Person {
     protected String lastname;
     protected String password;
     protected String sex;
+    protected String telegramID;
     protected String telegramUsername;
     protected String username;
 
@@ -218,6 +221,30 @@ public class Person {
      */
     public void setSex(String value) {
         this.sex = value;
+    }
+
+    /**
+     * Gets the value of the telegramID property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getTelegramID() {
+        return telegramID;
+    }
+
+    /**
+     * Sets the value of the telegramID property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setTelegramID(String value) {
+        this.telegramID = value;
     }
 
     /**

@@ -26,6 +26,18 @@ public interface DataService {
 
     /**
      * 
+     * @return
+     *     returns myhealthylife.dataservice.soap.People
+     */
+    @WebMethod
+    @WebResult(name = "people", targetNamespace = "")
+    @RequestWrapper(localName = "listPeople", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.ListPeople")
+    @ResponseWrapper(localName = "listPeopleResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.ListPeopleResponse")
+    @Action(input = "http://soap.dataservice.myhealthylife/DataService/listPeopleRequest", output = "http://soap.dataservice.myhealthylife/DataService/listPeopleResponse")
+    public People listPeople();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns myhealthylife.dataservice.soap.Person
@@ -53,18 +65,6 @@ public interface DataService {
     public Person updatePerson(
         @WebParam(name = "arg0", targetNamespace = "")
         Person arg0);
-
-    /**
-     * 
-     * @return
-     *     returns myhealthylife.dataservice.soap.People
-     */
-    @WebMethod
-    @WebResult(name = "people", targetNamespace = "")
-    @RequestWrapper(localName = "listPeople", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.ListPeople")
-    @ResponseWrapper(localName = "listPeopleResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.ListPeopleResponse")
-    @Action(input = "http://soap.dataservice.myhealthylife/DataService/listPeopleRequest", output = "http://soap.dataservice.myhealthylife/DataService/listPeopleResponse")
-    public People listPeople();
 
     /**
      * 
@@ -218,6 +218,21 @@ public interface DataService {
     @ResponseWrapper(localName = "getMeasureTypesResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetMeasureTypesResponse")
     @Action(input = "http://soap.dataservice.myhealthylife/DataService/getMeasureTypesRequest", output = "http://soap.dataservice.myhealthylife/DataService/getMeasureTypesResponse")
     public MeasureTypeList getMeasureTypes();
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns myhealthylife.dataservice.soap.Person
+     */
+    @WebMethod
+    @WebResult(name = "person", targetNamespace = "")
+    @RequestWrapper(localName = "getPersonByTelegramId", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetPersonByTelegramId")
+    @ResponseWrapper(localName = "getPersonByTelegramIdResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetPersonByTelegramIdResponse")
+    @Action(input = "http://soap.dataservice.myhealthylife/DataService/getPersonByTelegramIdRequest", output = "http://soap.dataservice.myhealthylife/DataService/getPersonByTelegramIdResponse")
+    public Person getPersonByTelegramId(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
     /**
      * 

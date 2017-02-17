@@ -42,6 +42,7 @@ public class ObjectFactory {
     private final static QName _HealthProfile_QNAME = new QName("http://soap.dataservice.myhealthylife/", "healthProfile");
     private final static QName _GetPersonByTelegramUsernameResponse_QNAME = new QName("http://soap.dataservice.myhealthylife/", "getPersonByTelegramUsernameResponse");
     private final static QName _SaveMeasureResponse_QNAME = new QName("http://soap.dataservice.myhealthylife/", "saveMeasureResponse");
+    private final static QName _GetPersonByTelegramId_QNAME = new QName("http://soap.dataservice.myhealthylife/", "getPersonByTelegramId");
     private final static QName _GetCurrentHealthResponse_QNAME = new QName("http://soap.dataservice.myhealthylife/", "getCurrentHealthResponse");
     private final static QName _CurrentHealth_QNAME = new QName("http://soap.dataservice.myhealthylife/", "currentHealth");
     private final static QName _DeletePerson_QNAME = new QName("http://soap.dataservice.myhealthylife/", "deletePerson");
@@ -56,6 +57,7 @@ public class ObjectFactory {
     private final static QName _UpdatePerson_QNAME = new QName("http://soap.dataservice.myhealthylife/", "updatePerson");
     private final static QName _GetMeasureTypesResponse_QNAME = new QName("http://soap.dataservice.myhealthylife/", "getMeasureTypesResponse");
     private final static QName _Register_QNAME = new QName("http://soap.dataservice.myhealthylife/", "register");
+    private final static QName _GetPersonByTelegramIdResponse_QNAME = new QName("http://soap.dataservice.myhealthylife/", "getPersonByTelegramIdResponse");
     private final static QName _SaveMeasure_QNAME = new QName("http://soap.dataservice.myhealthylife/", "saveMeasure");
     private final static QName _UpdateMeasureResponse_QNAME = new QName("http://soap.dataservice.myhealthylife/", "updateMeasureResponse");
 
@@ -227,6 +229,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetPersonByTelegramId }
+     * 
+     */
+    public GetPersonByTelegramId createGetPersonByTelegramId() {
+        return new GetPersonByTelegramId();
+    }
+
+    /**
      * Create an instance of {@link GetPersonByTelegramUsernameResponse }
      * 
      */
@@ -328,6 +338,14 @@ public class ObjectFactory {
      */
     public UpdatePerson createUpdatePerson() {
         return new UpdatePerson();
+    }
+
+    /**
+     * Create an instance of {@link GetPersonByTelegramIdResponse }
+     * 
+     */
+    public GetPersonByTelegramIdResponse createGetPersonByTelegramIdResponse() {
+        return new GetPersonByTelegramIdResponse();
     }
 
     /**
@@ -509,6 +527,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetPersonByTelegramId }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.dataservice.myhealthylife/", name = "getPersonByTelegramId")
+    public JAXBElement<GetPersonByTelegramId> createGetPersonByTelegramId(GetPersonByTelegramId value) {
+        return new JAXBElement<GetPersonByTelegramId>(_GetPersonByTelegramId_QNAME, GetPersonByTelegramId.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetCurrentHealthResponse }{@code >}}
      * 
      */
@@ -632,6 +659,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.dataservice.myhealthylife/", name = "register")
     public JAXBElement<Register> createRegister(Register value) {
         return new JAXBElement<Register>(_Register_QNAME, Register.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetPersonByTelegramIdResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.dataservice.myhealthylife/", name = "getPersonByTelegramIdResponse")
+    public JAXBElement<GetPersonByTelegramIdResponse> createGetPersonByTelegramIdResponse(GetPersonByTelegramIdResponse value) {
+        return new JAXBElement<GetPersonByTelegramIdResponse>(_GetPersonByTelegramIdResponse_QNAME, GetPersonByTelegramIdResponse.class, null, value);
     }
 
     /**
