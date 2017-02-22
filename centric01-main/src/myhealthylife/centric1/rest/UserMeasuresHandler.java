@@ -153,6 +153,9 @@ public class UserMeasuresHandler {
         // Creates the measure
         Measure mCreated = ds.saveMeasure(person.getIdPerson(), measureToCreate);
         
+        if(mCreated==null)
+        	return Utilities.throwBadRequest();
+        
         // Returns the measure just created
 		return Utilities.throwOK(mCreated);
         
