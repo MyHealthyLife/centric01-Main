@@ -10,12 +10,18 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
+  
+  
   <servlet>
     <servlet-name>Jersey Web Application</servlet-name>
     <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
     <init-param>
       <param-name>jersey.config.server.provider.packages</param-name>
-      <param-value>myhealthylife.centric1.rest</param-value>
+      <param-value>myhealthylife.centric1.rest</param-value> 
+    </init-param>
+    <init-param>
+    	<param-name>jersey.config.server.provider.classnames</param-name>
+      	<param-value>myhealthylife.centric1.filters.CorsHeaders</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
