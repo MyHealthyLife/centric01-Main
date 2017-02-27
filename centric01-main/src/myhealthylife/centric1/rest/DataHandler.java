@@ -92,6 +92,14 @@ public class DataHandler {
 		if(p.getUsername()!=null)
 			stored.setUsername(p.getUsername());
 		
+		if(p.getSex()!=null){
+			stored.setSex(p.getSex());
+		}
+		
+		if(p.getTelegramID()!=null){
+			stored.setTelegramID(p.getTelegramID());
+		}
+		
 		Person updated=ds.updatePerson(stored);
 		
 		if(updated==null)
