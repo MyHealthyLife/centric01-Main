@@ -99,13 +99,14 @@ public class FoodHandler {
 		
         
         List<String> preferredType = this.getPreferredSentenceType(lastMeasures, measureTypes);
+        System.out.println("Preferred: " + preferredType.get(0) + " " + preferredType.get(1));
         String preferredTypeName = preferredType.get(0);
         Boolean preferredTypeTrend = Boolean.valueOf(preferredType.get(1));
         
         Integer maxCal = 1000;
         
         if(preferredTypeTrend) {
-        	maxCal = null;
+        	maxCal = Integer.MAX_VALUE;
         }
         
         // Gets the foods to return
