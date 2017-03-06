@@ -28,6 +28,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="telegramID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="telegramUsername" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="usernameVisible" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -47,7 +48,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "sex",
     "telegramID",
     "telegramUsername",
-    "username"
+    "username",
+    "usernameVisible"
 })
 public class Person {
 
@@ -62,6 +64,7 @@ public class Person {
     protected String telegramID;
     protected String telegramUsername;
     protected String username;
+    protected Boolean usernameVisible;
 
     /**
      * Gets the value of the birthdate property.
@@ -293,6 +296,30 @@ public class Person {
      */
     public void setUsername(String value) {
         this.username = value;
+    }
+
+    /**
+     * Gets the value of the usernameVisible property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isUsernameVisible() {
+        return usernameVisible;
+    }
+
+    /**
+     * Sets the value of the usernameVisible property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setUsernameVisible(Boolean value) {
+        this.usernameVisible = value;
     }
 
 }

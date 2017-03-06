@@ -100,6 +100,10 @@ public class DataHandler {
 			stored.setTelegramID(p.getTelegramID());
 		}
 		
+		if(p.isUsernameVisible()!=null){
+			stored.setUsernameVisible(p.isUsernameVisible());
+		}
+		
 		Person updated=ds.updatePerson(stored);
 		
 		if(updated==null)
