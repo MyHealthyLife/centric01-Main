@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for updateSentence complex type.
+ * <p>Classe Java per updateSentence complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
  * &lt;complexType name="updateSentence">
@@ -34,7 +34,7 @@ public class UpdateSentence {
     protected Sentence sentence;
 
     /**
-     * Gets the value of the sentence property.
+     * Recupera il valore della proprietà sentence.
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class UpdateSentence {
     }
 
     /**
-     * Sets the value of the sentence property.
+     * Imposta il valore della proprietà sentence.
      * 
      * @param value
      *     allowed object is

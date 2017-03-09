@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for deleteSentence complex type.
+ * <p>Classe Java per deleteSentence complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
  * &lt;complexType name="deleteSentence">
@@ -34,7 +34,7 @@ public class DeleteSentence {
     protected long sentenceId;
 
     /**
-     * Gets the value of the sentenceId property.
+     * Recupera il valore della proprietà sentenceId.
      * 
      */
     public long getSentenceId() {
@@ -42,7 +42,7 @@ public class DeleteSentence {
     }
 
     /**
-     * Sets the value of the sentenceId property.
+     * Imposta il valore della proprietà sentenceId.
      * 
      */
     public void setSentenceId(long value) {

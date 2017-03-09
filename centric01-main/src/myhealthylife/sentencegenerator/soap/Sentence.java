@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for sentence complex type.
+ * <p>Classe Java per sentence complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
  * &lt;complexType name="sentence">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="idSentence" type="{http://www.w3.org/2001/XMLSchema}long"/>
+ *         &lt;element name="idSentence" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
  *         &lt;element name="text" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="sentenceType" type="{http://soap.sentencegenerator.myhealthylife/}sentenceType" minOccurs="0"/>
@@ -37,29 +37,37 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Sentence {
 
-    protected long idSentence;
+    protected Long idSentence;
     protected String text;
     protected String url;
     protected SentenceType sentenceType;
 
     /**
-     * Gets the value of the idSentence property.
+     * Recupera il valore della proprietà idSentence.
      * 
+     * @return
+     *     possible object is
+     *     {@link Long }
+     *     
      */
-    public long getIdSentence() {
+    public Long getIdSentence() {
         return idSentence;
     }
 
     /**
-     * Sets the value of the idSentence property.
+     * Imposta il valore della proprietà idSentence.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Long }
+     *     
      */
-    public void setIdSentence(long value) {
+    public void setIdSentence(Long value) {
         this.idSentence = value;
     }
 
     /**
-     * Gets the value of the text property.
+     * Recupera il valore della proprietà text.
      * 
      * @return
      *     possible object is
@@ -71,7 +79,7 @@ public class Sentence {
     }
 
     /**
-     * Sets the value of the text property.
+     * Imposta il valore della proprietà text.
      * 
      * @param value
      *     allowed object is
@@ -83,7 +91,7 @@ public class Sentence {
     }
 
     /**
-     * Gets the value of the url property.
+     * Recupera il valore della proprietà url.
      * 
      * @return
      *     possible object is
@@ -95,7 +103,7 @@ public class Sentence {
     }
 
     /**
-     * Sets the value of the url property.
+     * Imposta il valore della proprietà url.
      * 
      * @param value
      *     allowed object is
@@ -107,7 +115,7 @@ public class Sentence {
     }
 
     /**
-     * Gets the value of the sentenceType property.
+     * Recupera il valore della proprietà sentenceType.
      * 
      * @return
      *     possible object is
@@ -119,7 +127,7 @@ public class Sentence {
     }
 
     /**
-     * Sets the value of the sentenceType property.
+     * Imposta il valore della proprietà sentenceType.
      * 
      * @param value
      *     allowed object is

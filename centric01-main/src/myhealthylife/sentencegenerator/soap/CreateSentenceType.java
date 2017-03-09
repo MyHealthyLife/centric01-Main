@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for createSentenceType complex type.
+ * <p>Classe Java per createSentenceType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
  * &lt;complexType name="createSentenceType">
@@ -37,7 +37,7 @@ public class CreateSentenceType {
     protected Boolean motive;
 
     /**
-     * Gets the value of the typeName property.
+     * Recupera il valore della proprietà typeName.
      * 
      * @return
      *     possible object is
@@ -49,7 +49,7 @@ public class CreateSentenceType {
     }
 
     /**
-     * Sets the value of the typeName property.
+     * Imposta il valore della proprietà typeName.
      * 
      * @param value
      *     allowed object is
@@ -61,7 +61,7 @@ public class CreateSentenceType {
     }
 
     /**
-     * Gets the value of the motive property.
+     * Recupera il valore della proprietà motive.
      * 
      * @return
      *     possible object is
@@ -73,7 +73,7 @@ public class CreateSentenceType {
     }
 
     /**
-     * Sets the value of the motive property.
+     * Imposta il valore della proprietà motive.
      * 
      * @param value
      *     allowed object is

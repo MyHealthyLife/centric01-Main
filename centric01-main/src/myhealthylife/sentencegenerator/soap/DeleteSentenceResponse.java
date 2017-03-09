@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for deleteSentenceResponse complex type.
+ * <p>Classe Java per deleteSentenceResponse complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
  * &lt;complexType name="deleteSentenceResponse">
@@ -34,7 +34,7 @@ public class DeleteSentenceResponse {
     protected long idSentence;
 
     /**
-     * Gets the value of the idSentence property.
+     * Recupera il valore della proprietà idSentence.
      * 
      */
     public long getIdSentence() {
@@ -42,7 +42,7 @@ public class DeleteSentenceResponse {
     }
 
     /**
-     * Sets the value of the idSentence property.
+     * Imposta il valore della proprietà idSentence.
      * 
      */
     public void setIdSentence(long value) {

@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for sentenceType complex type.
+ * <p>Classe Java per sentenceType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
  * &lt;complexType name="sentenceType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="idSentenceType" type="{http://www.w3.org/2001/XMLSchema}long"/>
+ *         &lt;element name="idSentenceType" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="motive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *       &lt;/sequence>
@@ -35,28 +35,36 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class SentenceType {
 
-    protected long idSentenceType;
+    protected Long idSentenceType;
     protected String name;
     protected Boolean motive;
 
     /**
-     * Gets the value of the idSentenceType property.
+     * Recupera il valore della proprietà idSentenceType.
      * 
+     * @return
+     *     possible object is
+     *     {@link Long }
+     *     
      */
-    public long getIdSentenceType() {
+    public Long getIdSentenceType() {
         return idSentenceType;
     }
 
     /**
-     * Sets the value of the idSentenceType property.
+     * Imposta il valore della proprietà idSentenceType.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Long }
+     *     
      */
-    public void setIdSentenceType(long value) {
+    public void setIdSentenceType(Long value) {
         this.idSentenceType = value;
     }
 
     /**
-     * Gets the value of the name property.
+     * Recupera il valore della proprietà name.
      * 
      * @return
      *     possible object is
@@ -68,7 +76,7 @@ public class SentenceType {
     }
 
     /**
-     * Sets the value of the name property.
+     * Imposta il valore della proprietà name.
      * 
      * @param value
      *     allowed object is
@@ -80,7 +88,7 @@ public class SentenceType {
     }
 
     /**
-     * Gets the value of the motive property.
+     * Recupera il valore della proprietà motive.
      * 
      * @return
      *     possible object is
@@ -92,7 +100,7 @@ public class SentenceType {
     }
 
     /**
-     * Sets the value of the motive property.
+     * Imposta il valore della proprietà motive.
      * 
      * @param value
      *     allowed object is
