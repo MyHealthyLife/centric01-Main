@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="idFood" type="{http://www.w3.org/2001/XMLSchema}long"/>
+ *         &lt;element name="idFood" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="calories" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="foodType" type="{http://soap.nutritionservice.myhealthylife/}foodType" minOccurs="0"/>
@@ -37,7 +37,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Food {
 
-    protected long idFood;
+    protected Long idFood;
     protected String name;
     protected Integer calories;
     protected FoodType foodType;
@@ -45,16 +45,24 @@ public class Food {
     /**
      * Recupera il valore della proprietà idFood.
      * 
+     * @return
+     *     possible object is
+     *     {@link Long }
+     *     
      */
-    public long getIdFood() {
+    public Long getIdFood() {
         return idFood;
     }
 
     /**
      * Imposta il valore della proprietà idFood.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Long }
+     *     
      */
-    public void setIdFood(long value) {
+    public void setIdFood(Long value) {
         this.idFood = value;
     }
 
