@@ -25,7 +25,7 @@ import myhealthylife.nutritionservice.soap.Foods;
 import myhealthylife.sentencegenerator.soap.Sentence;
 import myhealthylife.sentencegenerator.soap.Sentences;
 
-@Path("/recipe")
+@Path("/foods")
 public class FoodHandler {
 
 
