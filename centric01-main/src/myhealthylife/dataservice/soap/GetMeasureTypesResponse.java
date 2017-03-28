@@ -3,6 +3,7 @@ package myhealthylife.dataservice.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -29,19 +30,20 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "getMeasureTypesResponse", propOrder = {
     "measureTypes"
 })
+@XmlRootElement(name = "getMeasureTypesResponse")
 public class GetMeasureTypesResponse {
 
-    protected MeasureTypeList measureTypes;
+    protected MeasureTypes measureTypes;
 
     /**
      * Gets the value of the measureTypes property.
      * 
      * @return
      *     possible object is
-     *     {@link MeasureTypeList }
+     *     {@link MeasureTypes }
      *     
      */
-    public MeasureTypeList getMeasureTypes() {
+    public MeasureTypes getMeasureTypes() {
         return measureTypes;
     }
 
@@ -50,10 +52,10 @@ public class GetMeasureTypesResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link MeasureTypeList }
+     *     {@link MeasureTypes }
      *     
      */
-    public void setMeasureTypes(MeasureTypeList value) {
+    public void setMeasureTypes(MeasureTypes value) {
         this.measureTypes = value;
     }
 

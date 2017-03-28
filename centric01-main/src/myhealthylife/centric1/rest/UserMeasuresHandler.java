@@ -21,7 +21,6 @@ import myhealthylife.centric1.util.ServicesLocator;
 import myhealthylife.centric1.util.Utilities;
 import myhealthylife.dataservice.soap.DataService;
 import myhealthylife.dataservice.soap.Measure;
-import myhealthylife.dataservice.soap.MeasureHistory;
 import myhealthylife.dataservice.soap.People;
 import myhealthylife.dataservice.soap.Person;
 

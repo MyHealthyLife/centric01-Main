@@ -3,6 +3,7 @@ package myhealthylife.dataservice.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -29,6 +30,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "updateMeasureResponse", propOrder = {
     "measure"
 })
+@XmlRootElement(name = "updateMeasureResponse")
 public class UpdateMeasureResponse {
 
     protected Measure measure;

@@ -196,28 +196,28 @@ public interface DataService {
      * 
      * @param arg0
      * @return
-     *     returns myhealthylife.dataservice.soap.MeasureHistory
+     *     returns myhealthylife.dataservice.soap.MeasureHystory
      */
     @WebMethod
     @WebResult(name = "measureHistory", targetNamespace = "")
     @RequestWrapper(localName = "getMeasureHistory", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetMeasureHistory")
     @ResponseWrapper(localName = "getMeasureHistoryResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetMeasureHistoryResponse")
     @Action(input = "http://soap.dataservice.myhealthylife/DataService/getMeasureHistoryRequest", output = "http://soap.dataservice.myhealthylife/DataService/getMeasureHistoryResponse")
-    public MeasureHistory getMeasureHistory(
+    public MeasureHystory getMeasureHistory(
         @WebParam(name = "arg0", targetNamespace = "")
         long arg0);
 
     /**
      * 
      * @return
-     *     returns myhealthylife.dataservice.soap.MeasureTypeList
+     *     returns myhealthylife.dataservice.soap.MeasureTypes
      */
     @WebMethod
     @WebResult(name = "measureTypes", targetNamespace = "")
     @RequestWrapper(localName = "getMeasureTypes", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetMeasureTypes")
     @ResponseWrapper(localName = "getMeasureTypesResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetMeasureTypesResponse")
     @Action(input = "http://soap.dataservice.myhealthylife/DataService/getMeasureTypesRequest", output = "http://soap.dataservice.myhealthylife/DataService/getMeasureTypesResponse")
-    public MeasureTypeList getMeasureTypes();
+    public MeasureTypes getMeasureTypes();
 
     /**
      * 

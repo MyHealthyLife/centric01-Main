@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -30,26 +31,27 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "currentHealth", propOrder = {
-    "measure"
+    "measures"
 })
+@XmlRootElement(name = "currentHealth")
 public class CurrentHealth {
 
-    @XmlElement(nillable = true)
-    protected List<Measure> measure;
+    @XmlElement(name = "measure", nillable = true)
+    protected List<Measure> measures;
 
     /**
-     * Gets the value of the measure property.
+     * Gets the value of the measures property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the measure property.
+     * This is why there is not a <CODE>set</CODE> method for the measures property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getMeasure().add(newItem);
+     *    getMeasures().add(newItem);
      * </pre>
      * 
      * 
@@ -59,11 +61,11 @@ public class CurrentHealth {
      * 
      * 
      */
-    public List<Measure> getMeasure() {
-        if (measure == null) {
-            measure = new ArrayList<Measure>();
+    public List<Measure> getMeasures() {
+        if (measures == null) {
+            measures = new ArrayList<Measure>();
         }
-        return this.measure;
+        return this.measures;
     }
 
 }

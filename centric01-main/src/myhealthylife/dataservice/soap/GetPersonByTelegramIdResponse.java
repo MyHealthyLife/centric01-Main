@@ -3,6 +3,7 @@ package myhealthylife.dataservice.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -29,6 +30,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "getPersonByTelegramIdResponse", propOrder = {
     "person"
 })
+@XmlRootElement(name = "getPersonByTelegramIdResponse")
 public class GetPersonByTelegramIdResponse {
 
     protected Person person;

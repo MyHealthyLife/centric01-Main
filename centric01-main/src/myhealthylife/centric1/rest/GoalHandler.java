@@ -50,7 +50,7 @@ public class GoalHandler {
 		if(p.getSex()==null)
 			return Utilities.throwNoContent();
 		
-		List<Measure> measures=p.getHealthProfile().getCurrentHealth().getMeasure();
+		List<Measure> measures=p.getHealthProfile().getCurrentHealth().getMeasures();
 		
 		//downloads the optimal parameter
 		List<Parameter> parameters=op.readOptimalParametersByAgeAndSex(Utilities.getAgeByDateOfBorn(p.getBirthdate()),p.getSex()).getParameters();

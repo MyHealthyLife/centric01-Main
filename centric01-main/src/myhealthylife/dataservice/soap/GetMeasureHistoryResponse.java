@@ -3,6 +3,7 @@ package myhealthylife.dataservice.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -29,19 +30,20 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "getMeasureHistoryResponse", propOrder = {
     "measureHistory"
 })
+@XmlRootElement(name = "getMeasureHistoryResponse")
 public class GetMeasureHistoryResponse {
 
-    protected MeasureHistory measureHistory;
+    protected MeasureHystory measureHistory;
 
     /**
      * Gets the value of the measureHistory property.
      * 
      * @return
      *     possible object is
-     *     {@link MeasureHistory }
+     *     {@link MeasureHystory }
      *     
      */
-    public MeasureHistory getMeasureHistory() {
+    public MeasureHystory getMeasureHistory() {
         return measureHistory;
     }
 
@@ -50,10 +52,10 @@ public class GetMeasureHistoryResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link MeasureHistory }
+     *     {@link MeasureHystory }
      *     
      */
-    public void setMeasureHistory(MeasureHistory value) {
+    public void setMeasureHistory(MeasureHystory value) {
         this.measureHistory = value;
     }
 

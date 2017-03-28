@@ -3,6 +3,7 @@ package myhealthylife.dataservice.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -51,6 +52,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "username",
     "usernameVisible"
 })
+@XmlRootElement(name = "person")
 public class Person {
 
     @XmlSchemaType(name = "dateTime")

@@ -6,20 +6,21 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for measureHistory complex type.
+ * <p>Java class for measureTypeList complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="measureHistory">
+ * &lt;complexType name="measureTypeList">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="measures" type="{http://soap.dataservice.myhealthylife/}measure" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="measureType" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,41 +30,42 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "measureHistory", propOrder = {
-    "measures"
+@XmlType(name = "measureTypeList", propOrder = {
+    "measureTypes"
 })
-public class MeasureHistory {
+@XmlRootElement(name = "measureTypes")
+public class MeasureTypes {
 
-    @XmlElement(nillable = true)
-    protected List<Measure> measures;
+    @XmlElement(name = "measureType", nillable = true)
+    protected List<String> measureTypes;
 
     /**
-     * Gets the value of the measures property.
+     * Gets the value of the measureTypes property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the measures property.
+     * This is why there is not a <CODE>set</CODE> method for the measureTypes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getMeasures().add(newItem);
+     *    getMeasureTypes().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Measure }
+     * {@link String }
      * 
      * 
      */
-    public List<Measure> getMeasures() {
-        if (measures == null) {
-            measures = new ArrayList<Measure>();
+    public List<String> getMeasureTypes() {
+        if (measureTypes == null) {
+            measureTypes = new ArrayList<String>();
         }
-        return this.measures;
+        return this.measureTypes;
     }
 
 }

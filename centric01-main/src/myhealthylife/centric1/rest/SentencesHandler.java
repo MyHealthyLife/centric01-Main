@@ -21,7 +21,6 @@ import myhealthylife.centric1.util.Utilities;
 import myhealthylife.dataservice.soap.CurrentHealth;
 import myhealthylife.dataservice.soap.DataService;
 import myhealthylife.dataservice.soap.Measure;
-import myhealthylife.dataservice.soap.MeasureHistory;
 import myhealthylife.dataservice.soap.Person;
 import myhealthylife.sentencegenerator.soap.Sentence;
 import myhealthylife.sentencegenerator.soap.SentenceService;
@@ -74,11 +73,11 @@ public class SentencesHandler {
         }
         
         // Gets the current measure and the last 3 available measures
-        List<Measure> currentMeasures = person.getHealthProfile().getCurrentHealth().getMeasure();
+        List<Measure> currentMeasures = person.getHealthProfile().getCurrentHealth().getMeasures();
         
         // Gets all the measures for that user and all the types available
         List<Measure> measureHistory = ds.getMeasureHistory(person.getIdPerson()).getMeasures();
-        List<String> measureTypes = ds.getMeasureTypes().getMeasureType();
+        List<String> measureTypes = ds.getMeasureTypes().getMeasureTypes();
         
         
         List<Boolean> measureTypesInserted = new ArrayList<>();

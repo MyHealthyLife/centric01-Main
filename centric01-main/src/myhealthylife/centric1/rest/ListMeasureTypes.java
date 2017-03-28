@@ -7,7 +7,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import myhealthylife.centric1.util.ServicesLocator;
-import myhealthylife.dataservice.soap.MeasureTypeList;
+import myhealthylife.dataservice.soap.MeasureTypes;
 
 @Path("/measuretypes")
 public class ListMeasureTypes {
@@ -15,7 +15,7 @@ public class ListMeasureTypes {
 	@GET
 	@Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
-	public MeasureTypeList getMeasureTypes(){
+	public MeasureTypes getMeasureTypes(){
 		return ServicesLocator.getDataServiceConnection().getMeasureTypes();
 	}
 }
