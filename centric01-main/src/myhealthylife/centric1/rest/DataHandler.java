@@ -23,14 +23,11 @@ public class DataHandler {
 	@Path("/{username}")
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
-	public Response getPerson(@PathParam("username") String username){
+	public Person getPerson(@PathParam("username") String username){
 		DataService ds = ServicesLocator.getDataServiceConnection();
 		Person p=ds.getPersonByUsername(username);
 		
-		if(p==null)
-			return Utilities.throwResourceNotFound();
-		
-		return Utilities.throwOK(p);
+		return p;
 	}
 
 	@GET
