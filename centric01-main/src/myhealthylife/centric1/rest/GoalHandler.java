@@ -29,7 +29,7 @@ public class GoalHandler {
 	@GET
 	@Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
 	@Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
-	public Response getUserGoal(@PathParam("username") String username){
+	public GoalList getUserGoal(@PathParam("username") String username){
 		
 		DataService ds=ServicesLocator.getDataServiceConnection();
 		OptimalParameters op=ServicesLocator.getOptimalParameterConnection();
@@ -38,17 +38,17 @@ public class GoalHandler {
 		
 		/*if person do not exists throw an error*/
 		if(p==null)
-			return Utilities.throwResourceNotFound();
+			return null;
 		
 		/*if the person do no have a birthdate throw an error*/
 		if(p.getBirthdate()==null)
-			return Utilities.throwNoContent();
+			return null;
 		
 		if(p.getHealthProfile()==null)
-			return Utilities.throwNoContent();
+			return null;
 		
 		if(p.getSex()==null)
-			return Utilities.throwNoContent();
+			return null;
 		
 		List<Measure> measures=p.getHealthProfile().getCurrentHealth().getMeasures();
 		
@@ -85,6 +85,6 @@ public class GoalHandler {
 		GoalList list=new GoalList();
 		list.setGoals(goals);
 		
-		return Utilities.throwOK(list);
+		return list;
 	}
 }

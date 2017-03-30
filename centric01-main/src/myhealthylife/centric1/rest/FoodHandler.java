@@ -33,7 +33,7 @@ public class FoodHandler {
 	@GET
 	@Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
-	public Response getSuggestedFoods(@PathParam("username") String username){
+	public Foods_Type getSuggestedFoods(@PathParam("username") String username){
 
 
 		Foods fs = ServicesLocator.getFoodServiceConnection();
@@ -44,7 +44,7 @@ public class FoodHandler {
         
         // If the username does not exist it throws an error
         if(person==null) {
-			return Utilities.throwResourceNotFound();
+			return null;
         }
         
         // Gets the current measure and the last 3 available measures
@@ -117,7 +117,7 @@ public class FoodHandler {
         }
         
         // Returns the random sentence
-		return Utilities.throwOK(foodListToReturn);
+		return foodListToReturn;
 		
 	}
 	

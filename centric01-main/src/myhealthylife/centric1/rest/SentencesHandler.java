@@ -35,7 +35,7 @@ public class SentencesHandler {
 	@GET
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
-	public Response getMeasureHistory() {
+	public Sentence getMeasureHistory() {
 		
 		Sentences ss = ServicesLocator.getSentenceGeneratorConnection();
 		
@@ -44,11 +44,11 @@ public class SentencesHandler {
         
         // If the sentence is null it returns an error
         if(randomSentence==null) {
-			return Utilities.throwResourceNotFound();
+			return null;
         }
 			
         // Returns the random sentence
-		return Utilities.throwOK(randomSentence);
+		return randomSentence;
         
 	}
 	

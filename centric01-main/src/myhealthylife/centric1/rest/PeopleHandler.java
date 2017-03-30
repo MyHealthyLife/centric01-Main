@@ -18,13 +18,10 @@ public class PeopleHandler {
 	@GET
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
-	public Response getPeople(){
+	public People getPeople(){
 		DataService ds=ServicesLocator.getDataServiceConnection();
 		People people=ds.listPeople();
 		
-		if(people==null)
-			return Utilities.throwResourceNotFound();
-		
-		return Utilities.throwOK(people);
+		return people;
 	}
 }

@@ -34,42 +34,35 @@ public class DataHandler {
 	@Path("/telegram/{username}")
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
-	public Response getPersonByTelegramUsername(@PathParam("username") String username){
+	public Person getPersonByTelegramUsername(@PathParam("username") String username){
 		DataService ds=ServicesLocator.getDataServiceConnection();
 		Person person=ds.getPersonByTelegramUsername(username);
 		
-		if(person==null)
-			return Utilities.throwResourceNotFound();
-		
-		return Utilities.throwOK(person);
+		return person;
 	}
 	
 	@GET
 	@Path("/telegram/id/{telegramId}")
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
-	public Response getPersonByTelegramID(@PathParam("telegramId")String telegramId){
+	public Person getPersonByTelegramID(@PathParam("telegramId")String telegramId){
 		DataService ds=ServicesLocator.getDataServiceConnection();
 		
 		Person p=ds.getPersonByTelegramId(telegramId);
 		
-		if(p==null){
-			Utilities.throwResourceNotFound();
-		}
-		
-		return Utilities.throwOK(p);
+		return p;
 	}
 	
 	@PUT
 	@Path("/{username}")//the username in path in this way also the username of the person can be update by the body
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
-	public Response updatePerson(Person p, @PathParam("username") String username){
+	public Person updatePerson(Person p, @PathParam("username") String username){
 		DataService ds = ServicesLocator.getDataServiceConnection();
 		Person stored=ds.getPersonByUsername(username);
 		
 		if(stored==null)
-			return Utilities.throwResourceNotFound();
+			return null;
 		
 		if(p.getBirthdate()!=null)
 			stored.setBirthdate(p.getBirthdate());
@@ -103,21 +96,19 @@ public class DataHandler {
 		
 		Person updated=ds.updatePerson(stored);
 		
-		if(updated==null)
-			return Utilities.throwResourceNotFound();
 		
-		return Utilities.throwOK(updated);
+		return updated;
 	}
 	
 	@DELETE
 	@Path("/{username}")//the username in path in this way also the username of the person can be update by the body
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
-	public Response deleteUserInformations(@PathParam("username") String username){
+	public long deleteUserInformations(@PathParam("username") String username){
 		Person p=ServicesLocator.getDataServiceConnection().getPersonByUsername(username);
 		long id=ServicesLocator.getDataServiceConnection().deletePerson(p.getIdPerson());
 		
-		return Utilities.throwOK(id);
+		return id;
 	}
 	
 }

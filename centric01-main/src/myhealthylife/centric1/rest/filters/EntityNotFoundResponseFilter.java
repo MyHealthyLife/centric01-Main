@@ -1,4 +1,4 @@
-package myhealthylife.centric1.filters;
+package myhealthylife.centric1.rest.filters;
 
 import java.io.IOException;
 
@@ -18,7 +18,7 @@ public void filter(ContainerRequestContext requestContext,
     String method = requestContext.getMethod();
 
     Object entity = responseContext.getEntity();
-	//System.out.println("Filtering..."+requestContext.getMethod());
+	System.out.println("Filtering..."+requestContext.getMethod());
 	if(requestContext.getMethod().equals("GET")){
 		if(responseContext.getEntity()==null){
 			responseContext.setStatus(Response.Status.NOT_FOUND.getStatusCode());

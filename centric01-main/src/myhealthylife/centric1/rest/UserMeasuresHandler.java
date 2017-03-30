@@ -21,6 +21,7 @@ import myhealthylife.centric1.util.ServicesLocator;
 import myhealthylife.centric1.util.Utilities;
 import myhealthylife.dataservice.soap.DataService;
 import myhealthylife.dataservice.soap.Measure;
+import myhealthylife.dataservice.soap.MeasureHystory;
 import myhealthylife.dataservice.soap.People;
 import myhealthylife.dataservice.soap.Person;
 
@@ -38,7 +39,7 @@ public class UserMeasuresHandler {
 	@GET
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
-	public Response getMeasureHistory(@PathParam("username") String username) throws MalformedURLException{
+	public MeasureHystory getMeasureHistory(@PathParam("username") String username) throws MalformedURLException{
 		
 		DataService ds = ServicesLocator.getDataServiceConnection();
 		
@@ -47,11 +48,11 @@ public class UserMeasuresHandler {
         
         // If the username does not exist it throws an error
         if(person==null) {
-			return Utilities.throwResourceNotFound();
+			return null;
         }
 			
         // Gets the measure history
-		return Utilities.throwOK(ds.getMeasureHistory(person.getIdPerson()));
+		return ds.getMeasureHistory(person.getIdPerson());
         
 	}
 	
@@ -62,7 +63,7 @@ public class UserMeasuresHandler {
 	@GET
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
-	public Response getMeasureByMid(@PathParam("username") String username, @PathParam("mid") Integer mid) {
+	public Measure getMeasureByMid(@PathParam("username") String username, @PathParam("mid") Integer mid) {
 		
 		DataService ds = ServicesLocator.getDataServiceConnection();
 		
@@ -71,14 +72,14 @@ public class UserMeasuresHandler {
         
         // If the username does not exist it throws an error
         if(person==null) {
-			return Utilities.throwResourceNotFound();
+			return null;
         }
 		
         // Gets the measure related to that person
         Measure measure = ds.getMeasure(mid);
         
         // Returns the measure
-		return Utilities.throwOK(measure);
+		return measure;
         
 	}
 	
@@ -89,7 +90,7 @@ public class UserMeasuresHandler {
 	@PUT
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
-	public Response updateMeasureByMid(Measure measureToUpdate, @PathParam("username") String username, @PathParam("mid") Integer mid) {
+	public Measure updateMeasureByMid(Measure measureToUpdate, @PathParam("username") String username, @PathParam("mid") Integer mid) {
 		
 		DataService ds = ServicesLocator.getDataServiceConnection();
 		
@@ -98,14 +99,14 @@ public class UserMeasuresHandler {
         
         // If the username does not exist it throws an error
         if(person==null) {
-			return Utilities.throwResourceNotFound();
+			return null;
         }
 		
         // Gets the measure related to that person
         Measure measure = ds.getMeasure(mid);
         
         if(measure==null) {
-			return Utilities.throwResourceNotFound();
+			return null;
         }
         
         if(measureToUpdate.getDateRegistered()!=null) {
@@ -121,7 +122,7 @@ public class UserMeasuresHandler {
         Measure mUpdated = ds.updateMeasure(measure);
         
         // Returns the measure just updated
-		return Utilities.throwOK(mUpdated);
+		return mUpdated;
         
 	}
 	
@@ -132,7 +133,7 @@ public class UserMeasuresHandler {
 	@POST
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
-	public Response createMeasure(Measure measureToCreate, @PathParam("username") String username) {
+	public Measure createMeasure(Measure measureToCreate, @PathParam("username") String username) {
 		
 		DataService ds = ServicesLocator.getDataServiceConnection();
 		
@@ -141,22 +142,22 @@ public class UserMeasuresHandler {
         
         // If the username does not exist it throws an error
         if(person==null || measureToCreate==null) {
-			return Utilities.throwResourceNotFound();
+			return null;
         }
 		
         
         if(measureToCreate.getDateRegistered()==null || measureToCreate.getMeasureType()==null || measureToCreate.getMeasureValue()==null) {
-        	return Utilities.throwBadRequest();
+        	return null;
         }
         
         // Creates the measure
         Measure mCreated = ds.saveMeasure(person.getIdPerson(), measureToCreate);
         
         if(mCreated==null)
-        	return Utilities.throwBadRequest();
+        	return null;
         
         // Returns the measure just created
-		return Utilities.throwOK(mCreated);
+		return mCreated;
         
 	}
 	
