@@ -3,13 +3,14 @@ package myhealthylife.sentencegenerator.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per setSentenceType complex type.
+ * <p>Java class for setSentenceType complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="setSentenceType">
@@ -31,13 +32,14 @@ import javax.xml.bind.annotation.XmlType;
     "sentenceId",
     "typeId"
 })
+@XmlRootElement(name = "setSentenceType")
 public class SetSentenceType {
 
     protected long sentenceId;
     protected long typeId;
 
     /**
-     * Recupera il valore della proprietà sentenceId.
+     * Gets the value of the sentenceId property.
      * 
      */
     public long getSentenceId() {
@@ -45,7 +47,7 @@ public class SetSentenceType {
     }
 
     /**
-     * Imposta il valore della proprietà sentenceId.
+     * Sets the value of the sentenceId property.
      * 
      */
     public void setSentenceId(long value) {
@@ -53,7 +55,7 @@ public class SetSentenceType {
     }
 
     /**
-     * Recupera il valore della proprietà typeId.
+     * Gets the value of the typeId property.
      * 
      */
     public long getTypeId() {
@@ -61,7 +63,7 @@ public class SetSentenceType {
     }
 
     /**
-     * Imposta il valore della proprietà typeId.
+     * Sets the value of the typeId property.
      * 
      */
     public void setTypeId(long value) {

@@ -3,13 +3,14 @@ package myhealthylife.nutritionservice.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per deleteFood complex type.
+ * <p>Java class for deleteFood complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="deleteFood">
@@ -29,12 +30,13 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "deleteFood", propOrder = {
     "foodId"
 })
+@XmlRootElement(name = "deleteFood")
 public class DeleteFood {
 
     protected long foodId;
 
     /**
-     * Recupera il valore della proprietà foodId.
+     * Gets the value of the foodId property.
      * 
      */
     public long getFoodId() {
@@ -42,7 +44,7 @@ public class DeleteFood {
     }
 
     /**
-     * Imposta il valore della proprietà foodId.
+     * Sets the value of the foodId property.
      * 
      */
     public void setFoodId(long value) {

@@ -4,6 +4,7 @@ package myhealtylife.optimalparamters.soap;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -30,6 +31,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "createAgeRangeResponse", propOrder = {
     "ageRange"
 })
+@XmlRootElement(name = "createAgeRangeResponse")
 public class CreateAgeRangeResponse {
 
     @XmlElement(name = "AgeRange")

@@ -3,6 +3,7 @@ package myhealtylife.optimalparamters.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -29,6 +30,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "readOptimalParametersBySex", propOrder = {
     "arg0"
 })
+@XmlRootElement(name = "readOptimalParametersBySex")
 public class ReadOptimalParametersBySex {
 
     protected String arg0;

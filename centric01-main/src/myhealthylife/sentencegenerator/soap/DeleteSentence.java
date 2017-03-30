@@ -3,13 +3,14 @@ package myhealthylife.sentencegenerator.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per deleteSentence complex type.
+ * <p>Java class for deleteSentence complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="deleteSentence">
@@ -29,12 +30,13 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "deleteSentence", propOrder = {
     "sentenceId"
 })
+@XmlRootElement(name = "deleteSentence")
 public class DeleteSentence {
 
     protected long sentenceId;
 
     /**
-     * Recupera il valore della proprietà sentenceId.
+     * Gets the value of the sentenceId property.
      * 
      */
     public long getSentenceId() {
@@ -42,7 +44,7 @@ public class DeleteSentence {
     }
 
     /**
-     * Imposta il valore della proprietà sentenceId.
+     * Sets the value of the sentenceId property.
      * 
      */
     public void setSentenceId(long value) {

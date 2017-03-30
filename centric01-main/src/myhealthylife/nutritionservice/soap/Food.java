@@ -3,13 +3,14 @@ package myhealthylife.nutritionservice.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per food complex type.
+ * <p>Java class for food complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="food">
@@ -35,6 +36,7 @@ import javax.xml.bind.annotation.XmlType;
     "calories",
     "foodType"
 })
+@XmlRootElement(name = "food")
 public class Food {
 
     protected Long idFood;
@@ -43,7 +45,7 @@ public class Food {
     protected FoodType foodType;
 
     /**
-     * Recupera il valore della proprietà idFood.
+     * Gets the value of the idFood property.
      * 
      * @return
      *     possible object is
@@ -55,7 +57,7 @@ public class Food {
     }
 
     /**
-     * Imposta il valore della proprietà idFood.
+     * Sets the value of the idFood property.
      * 
      * @param value
      *     allowed object is
@@ -67,7 +69,7 @@ public class Food {
     }
 
     /**
-     * Recupera il valore della proprietà name.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -79,7 +81,7 @@ public class Food {
     }
 
     /**
-     * Imposta il valore della proprietà name.
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
@@ -91,7 +93,7 @@ public class Food {
     }
 
     /**
-     * Recupera il valore della proprietà calories.
+     * Gets the value of the calories property.
      * 
      * @return
      *     possible object is
@@ -103,7 +105,7 @@ public class Food {
     }
 
     /**
-     * Imposta il valore della proprietà calories.
+     * Sets the value of the calories property.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +117,7 @@ public class Food {
     }
 
     /**
-     * Recupera il valore della proprietà foodType.
+     * Gets the value of the foodType property.
      * 
      * @return
      *     possible object is
@@ -127,7 +129,7 @@ public class Food {
     }
 
     /**
-     * Imposta il valore della proprietà foodType.
+     * Sets the value of the foodType property.
      * 
      * @param value
      *     allowed object is

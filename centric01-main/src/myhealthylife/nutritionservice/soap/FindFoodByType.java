@@ -3,13 +3,14 @@ package myhealthylife.nutritionservice.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per findFoodByType complex type.
+ * <p>Java class for findFoodByType complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="findFoodByType">
@@ -29,12 +30,13 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "findFoodByType", propOrder = {
     "typeName"
 })
+@XmlRootElement(name = "findFoodByType")
 public class FindFoodByType {
 
     protected String typeName;
 
     /**
-     * Recupera il valore della proprietà typeName.
+     * Gets the value of the typeName property.
      * 
      * @return
      *     possible object is
@@ -46,7 +48,7 @@ public class FindFoodByType {
     }
 
     /**
-     * Imposta il valore della proprietà typeName.
+     * Sets the value of the typeName property.
      * 
      * @param value
      *     allowed object is

@@ -3,6 +3,7 @@ package myhealtylife.optimalparamters.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -29,6 +30,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "deleteParameter", propOrder = {
     "arg0"
 })
+@XmlRootElement(name = "deleteParameter")
 public class DeleteParameter {
 
     protected long arg0;

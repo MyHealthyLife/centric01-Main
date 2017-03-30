@@ -3,6 +3,7 @@ package myhealtylife.optimalparamters.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -29,6 +30,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "updateAgeRange", propOrder = {
     "arg0"
 })
+@XmlRootElement(name = "updateAgeRange")
 public class UpdateAgeRange {
 
     protected AgeRange arg0;

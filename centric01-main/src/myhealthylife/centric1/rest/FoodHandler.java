@@ -20,8 +20,8 @@ import myhealthylife.dataservice.soap.DataService;
 import myhealthylife.dataservice.soap.Measure;
 import myhealthylife.dataservice.soap.Person;
 import myhealthylife.nutritionservice.soap.Food;
-import myhealthylife.nutritionservice.soap.FoodList;
 import myhealthylife.nutritionservice.soap.Foods;
+import myhealthylife.nutritionservice.soap.Foods_Type;
 import myhealthylife.sentencegenerator.soap.Sentence;
 import myhealthylife.sentencegenerator.soap.Sentences;
 
@@ -110,7 +110,7 @@ public class FoodHandler {
         }
         
         // Gets the foods to return
-        FoodList foodListToReturn = fs.findFoodByTypeFilteredByCalories(maxCal);
+        Foods_Type foodListToReturn = fs.findFoodByTypeFilteredByCalories(maxCal);
         
         if(foodListToReturn==null) {
         	foodListToReturn = fs.readFoodList();

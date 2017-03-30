@@ -3,13 +3,14 @@ package myhealthylife.nutritionservice.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per findFoodByTypeFilteredByCalories complex type.
+ * <p>Java class for findFoodByTypeFilteredByCalories complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="findFoodByTypeFilteredByCalories">
@@ -29,12 +30,13 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "findFoodByTypeFilteredByCalories", propOrder = {
     "maxCal"
 })
+@XmlRootElement(name = "findFoodByTypeFilteredByCalories")
 public class FindFoodByTypeFilteredByCalories {
 
     protected Integer maxCal;
 
     /**
-     * Recupera il valore della proprietà maxCal.
+     * Gets the value of the maxCal property.
      * 
      * @return
      *     possible object is
@@ -46,7 +48,7 @@ public class FindFoodByTypeFilteredByCalories {
     }
 
     /**
-     * Imposta il valore della proprietà maxCal.
+     * Sets the value of the maxCal property.
      * 
      * @param value
      *     allowed object is

@@ -3,13 +3,14 @@ package myhealthylife.nutritionservice.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per readFoodTypeListResponse complex type.
+ * <p>Java class for readFoodTypeListResponse complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="readFoodTypeListResponse">
@@ -29,31 +30,32 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "readFoodTypeListResponse", propOrder = {
     "foodTypeList"
 })
+@XmlRootElement(name = "readFoodTypeListResponse")
 public class ReadFoodTypeListResponse {
 
-    protected FoodTypeList foodTypeList;
+    protected FoodTypes foodTypeList;
 
     /**
-     * Recupera il valore della proprietà foodTypeList.
+     * Gets the value of the foodTypeList property.
      * 
      * @return
      *     possible object is
-     *     {@link FoodTypeList }
+     *     {@link FoodTypes }
      *     
      */
-    public FoodTypeList getFoodTypeList() {
+    public FoodTypes getFoodTypeList() {
         return foodTypeList;
     }
 
     /**
-     * Imposta il valore della proprietà foodTypeList.
+     * Sets the value of the foodTypeList property.
      * 
      * @param value
      *     allowed object is
-     *     {@link FoodTypeList }
+     *     {@link FoodTypes }
      *     
      */
-    public void setFoodTypeList(FoodTypeList value) {
+    public void setFoodTypeList(FoodTypes value) {
         this.foodTypeList = value;
     }
 

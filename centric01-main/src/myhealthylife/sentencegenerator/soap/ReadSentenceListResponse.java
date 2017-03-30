@@ -3,13 +3,14 @@ package myhealthylife.sentencegenerator.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per readSentenceListResponse complex type.
+ * <p>Java class for readSentenceListResponse complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="readSentenceListResponse">
@@ -29,31 +30,32 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "readSentenceListResponse", propOrder = {
     "sentenceList"
 })
+@XmlRootElement(name = "readSentenceListResponse")
 public class ReadSentenceListResponse {
 
-    protected SentenceList sentenceList;
+    protected Sentences_Type sentenceList;
 
     /**
-     * Recupera il valore della proprietà sentenceList.
+     * Gets the value of the sentenceList property.
      * 
      * @return
      *     possible object is
-     *     {@link SentenceList }
+     *     {@link Sentences_Type }
      *     
      */
-    public SentenceList getSentenceList() {
+    public Sentences_Type getSentenceList() {
         return sentenceList;
     }
 
     /**
-     * Imposta il valore della proprietà sentenceList.
+     * Sets the value of the sentenceList property.
      * 
      * @param value
      *     allowed object is
-     *     {@link SentenceList }
+     *     {@link Sentences_Type }
      *     
      */
-    public void setSentenceList(SentenceList value) {
+    public void setSentenceList(Sentences_Type value) {
         this.sentenceList = value;
     }
 

@@ -3,13 +3,14 @@ package myhealthylife.sentencegenerator.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per createSentenceType complex type.
+ * <p>Java class for createSentenceType complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="createSentenceType">
@@ -31,13 +32,14 @@ import javax.xml.bind.annotation.XmlType;
     "typeName",
     "motive"
 })
+@XmlRootElement(name = "createSentenceType")
 public class CreateSentenceType {
 
     protected String typeName;
     protected Boolean motive;
 
     /**
-     * Recupera il valore della proprietà typeName.
+     * Gets the value of the typeName property.
      * 
      * @return
      *     possible object is
@@ -49,7 +51,7 @@ public class CreateSentenceType {
     }
 
     /**
-     * Imposta il valore della proprietà typeName.
+     * Sets the value of the typeName property.
      * 
      * @param value
      *     allowed object is
@@ -61,7 +63,7 @@ public class CreateSentenceType {
     }
 
     /**
-     * Recupera il valore della proprietà motive.
+     * Gets the value of the motive property.
      * 
      * @return
      *     possible object is
@@ -73,7 +75,7 @@ public class CreateSentenceType {
     }
 
     /**
-     * Imposta il valore della proprietà motive.
+     * Sets the value of the motive property.
      * 
      * @param value
      *     allowed object is

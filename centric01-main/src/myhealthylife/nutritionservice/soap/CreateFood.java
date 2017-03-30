@@ -3,13 +3,14 @@ package myhealthylife.nutritionservice.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per createFood complex type.
+ * <p>Java class for createFood complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="createFood">
@@ -29,12 +30,13 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "createFood", propOrder = {
     "food"
 })
+@XmlRootElement(name = "createFood")
 public class CreateFood {
 
     protected Food food;
 
     /**
-     * Recupera il valore della proprietà food.
+     * Gets the value of the food property.
      * 
      * @return
      *     possible object is
@@ -46,7 +48,7 @@ public class CreateFood {
     }
 
     /**
-     * Imposta il valore della proprietà food.
+     * Sets the value of the food property.
      * 
      * @param value
      *     allowed object is

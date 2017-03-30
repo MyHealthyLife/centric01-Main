@@ -3,13 +3,14 @@ package myhealthylife.sentencegenerator.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per sentenceType complex type.
+ * <p>Java class for sentenceType complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="sentenceType">
@@ -33,6 +34,7 @@ import javax.xml.bind.annotation.XmlType;
     "name",
     "motive"
 })
+@XmlRootElement(name = "sentenceType")
 public class SentenceType {
 
     protected Long idSentenceType;
@@ -40,7 +42,7 @@ public class SentenceType {
     protected Boolean motive;
 
     /**
-     * Recupera il valore della proprietà idSentenceType.
+     * Gets the value of the idSentenceType property.
      * 
      * @return
      *     possible object is
@@ -52,7 +54,7 @@ public class SentenceType {
     }
 
     /**
-     * Imposta il valore della proprietà idSentenceType.
+     * Sets the value of the idSentenceType property.
      * 
      * @param value
      *     allowed object is
@@ -64,7 +66,7 @@ public class SentenceType {
     }
 
     /**
-     * Recupera il valore della proprietà name.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -76,7 +78,7 @@ public class SentenceType {
     }
 
     /**
-     * Imposta il valore della proprietà name.
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +90,7 @@ public class SentenceType {
     }
 
     /**
-     * Recupera il valore della proprietà motive.
+     * Gets the value of the motive property.
      * 
      * @return
      *     possible object is
@@ -100,7 +102,7 @@ public class SentenceType {
     }
 
     /**
-     * Imposta il valore della proprietà motive.
+     * Sets the value of the motive property.
      * 
      * @param value
      *     allowed object is

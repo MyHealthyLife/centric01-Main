@@ -3,13 +3,14 @@ package myhealthylife.nutritionservice.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per deleteFoodTypeResponse complex type.
+ * <p>Java class for deleteFoodTypeResponse complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="deleteFoodTypeResponse">
@@ -29,12 +30,13 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "deleteFoodTypeResponse", propOrder = {
     "idFoodType"
 })
+@XmlRootElement(name = "deleteFoodTypeResponse")
 public class DeleteFoodTypeResponse {
 
     protected long idFoodType;
 
     /**
-     * Recupera il valore della proprietà idFoodType.
+     * Gets the value of the idFoodType property.
      * 
      */
     public long getIdFoodType() {
@@ -42,7 +44,7 @@ public class DeleteFoodTypeResponse {
     }
 
     /**
-     * Imposta il valore della proprietà idFoodType.
+     * Sets the value of the idFoodType property.
      * 
      */
     public void setIdFoodType(long value) {

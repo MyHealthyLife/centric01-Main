@@ -3,13 +3,14 @@ package myhealthylife.sentencegenerator.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per readRandomSentenceByType complex type.
+ * <p>Java class for readRandomSentenceByType complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="readRandomSentenceByType">
@@ -29,12 +30,13 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "readRandomSentenceByType", propOrder = {
     "sentenceType"
 })
+@XmlRootElement(name = "readRandomSentenceByType")
 public class ReadRandomSentenceByType {
 
     protected String sentenceType;
 
     /**
-     * Recupera il valore della proprietà sentenceType.
+     * Gets the value of the sentenceType property.
      * 
      * @return
      *     possible object is
@@ -46,7 +48,7 @@ public class ReadRandomSentenceByType {
     }
 
     /**
-     * Imposta il valore della proprietà sentenceType.
+     * Sets the value of the sentenceType property.
      * 
      * @param value
      *     allowed object is

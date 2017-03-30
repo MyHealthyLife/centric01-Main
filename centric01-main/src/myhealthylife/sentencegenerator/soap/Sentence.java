@@ -3,13 +3,14 @@ package myhealthylife.sentencegenerator.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per sentence complex type.
+ * <p>Java class for sentence complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="sentence">
@@ -35,6 +36,7 @@ import javax.xml.bind.annotation.XmlType;
     "url",
     "sentenceType"
 })
+@XmlRootElement(name = "sentence")
 public class Sentence {
 
     protected Long idSentence;
@@ -43,7 +45,7 @@ public class Sentence {
     protected SentenceType sentenceType;
 
     /**
-     * Recupera il valore della proprietà idSentence.
+     * Gets the value of the idSentence property.
      * 
      * @return
      *     possible object is
@@ -55,7 +57,7 @@ public class Sentence {
     }
 
     /**
-     * Imposta il valore della proprietà idSentence.
+     * Sets the value of the idSentence property.
      * 
      * @param value
      *     allowed object is
@@ -67,7 +69,7 @@ public class Sentence {
     }
 
     /**
-     * Recupera il valore della proprietà text.
+     * Gets the value of the text property.
      * 
      * @return
      *     possible object is
@@ -79,7 +81,7 @@ public class Sentence {
     }
 
     /**
-     * Imposta il valore della proprietà text.
+     * Sets the value of the text property.
      * 
      * @param value
      *     allowed object is
@@ -91,7 +93,7 @@ public class Sentence {
     }
 
     /**
-     * Recupera il valore della proprietà url.
+     * Gets the value of the url property.
      * 
      * @return
      *     possible object is
@@ -103,7 +105,7 @@ public class Sentence {
     }
 
     /**
-     * Imposta il valore della proprietà url.
+     * Sets the value of the url property.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +117,7 @@ public class Sentence {
     }
 
     /**
-     * Recupera il valore della proprietà sentenceType.
+     * Gets the value of the sentenceType property.
      * 
      * @return
      *     possible object is
@@ -127,7 +129,7 @@ public class Sentence {
     }
 
     /**
-     * Imposta il valore della proprietà sentenceType.
+     * Sets the value of the sentenceType property.
      * 
      * @param value
      *     allowed object is
