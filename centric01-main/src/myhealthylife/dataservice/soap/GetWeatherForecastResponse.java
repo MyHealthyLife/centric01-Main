@@ -33,17 +33,17 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "getWeatherForecastResponse")
 public class GetWeatherForecastResponse {
 
-    protected CurrentType weatherForecast;
+    protected Current weatherForecast;
 
     /**
      * Gets the value of the weatherForecast property.
      * 
      * @return
      *     possible object is
-     *     {@link CurrentType }
+     *     {@link Current }
      *     
      */
-    public CurrentType getWeatherForecast() {
+    public Current getWeatherForecast() {
         return weatherForecast;
     }
 
@@ -52,10 +52,10 @@ public class GetWeatherForecastResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link CurrentType }
+     *     {@link Current }
      *     
      */
-    public void setWeatherForecast(CurrentType value) {
+    public void setWeatherForecast(Current value) {
         this.weatherForecast = value;
     }
 

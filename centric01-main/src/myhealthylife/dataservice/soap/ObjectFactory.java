@@ -110,6 +110,94 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Current }
+     * 
+     */
+    public Current createCurrent() {
+        return new Current();
+    }
+
+    /**
+     * Create an instance of {@link CityType }
+     * 
+     */
+    public CityType createCityType() {
+        return new CityType();
+    }
+
+    /**
+     * Create an instance of {@link TemperatureType }
+     * 
+     */
+    public TemperatureType createTemperatureType() {
+        return new TemperatureType();
+    }
+
+    /**
+     * Create an instance of {@link UmidityType }
+     * 
+     */
+    public UmidityType createUmidityType() {
+        return new UmidityType();
+    }
+
+    /**
+     * Create an instance of {@link PressureType }
+     * 
+     */
+    public PressureType createPressureType() {
+        return new PressureType();
+    }
+
+    /**
+     * Create an instance of {@link WindType }
+     * 
+     */
+    public WindType createWindType() {
+        return new WindType();
+    }
+
+    /**
+     * Create an instance of {@link CloudsType }
+     * 
+     */
+    public CloudsType createCloudsType() {
+        return new CloudsType();
+    }
+
+    /**
+     * Create an instance of {@link VisibilityType }
+     * 
+     */
+    public VisibilityType createVisibilityType() {
+        return new VisibilityType();
+    }
+
+    /**
+     * Create an instance of {@link PrecipitationType }
+     * 
+     */
+    public PrecipitationType createPrecipitationType() {
+        return new PrecipitationType();
+    }
+
+    /**
+     * Create an instance of {@link WeatherType }
+     * 
+     */
+    public WeatherType createWeatherType() {
+        return new WeatherType();
+    }
+
+    /**
+     * Create an instance of {@link LastupdateType }
+     * 
+     */
+    public LastupdateType createLastupdateType() {
+        return new LastupdateType();
+    }
+
+    /**
      * Create an instance of {@link DeletePersonResponse }
      * 
      */
@@ -163,14 +251,6 @@ public class ObjectFactory {
      */
     public GetWeatherForecastResponse createGetWeatherForecastResponse() {
         return new GetWeatherForecastResponse();
-    }
-
-    /**
-     * Create an instance of {@link CurrentType }
-     * 
-     */
-    public CurrentType createCurrentType() {
-        return new CurrentType();
     }
 
     /**
@@ -374,91 +454,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CityType }
-     * 
-     */
-    public CityType createCityType() {
-        return new CityType();
-    }
-
-    /**
-     * Create an instance of {@link PrecipitationType }
-     * 
-     */
-    public PrecipitationType createPrecipitationType() {
-        return new PrecipitationType();
-    }
-
-    /**
-     * Create an instance of {@link WindType }
-     * 
-     */
-    public WindType createWindType() {
-        return new WindType();
-    }
-
-    /**
-     * Create an instance of {@link VisibilityType }
-     * 
-     */
-    public VisibilityType createVisibilityType() {
-        return new VisibilityType();
-    }
-
-    /**
-     * Create an instance of {@link WeatherType }
-     * 
-     */
-    public WeatherType createWeatherType() {
-        return new WeatherType();
-    }
-
-    /**
      * Create an instance of {@link SunType }
      * 
      */
     public SunType createSunType() {
         return new SunType();
-    }
-
-    /**
-     * Create an instance of {@link TemperatureType }
-     * 
-     */
-    public TemperatureType createTemperatureType() {
-        return new TemperatureType();
-    }
-
-    /**
-     * Create an instance of {@link UmidityType }
-     * 
-     */
-    public UmidityType createUmidityType() {
-        return new UmidityType();
-    }
-
-    /**
-     * Create an instance of {@link CloudsType }
-     * 
-     */
-    public CloudsType createCloudsType() {
-        return new CloudsType();
-    }
-
-    /**
-     * Create an instance of {@link LastupdateType }
-     * 
-     */
-    public LastupdateType createLastupdateType() {
-        return new LastupdateType();
-    }
-
-    /**
-     * Create an instance of {@link PressureType }
-     * 
-     */
-    public PressureType createPressureType() {
-        return new PressureType();
     }
 
 }
