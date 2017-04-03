@@ -26,18 +26,6 @@ public interface DataService {
 
     /**
      * 
-     * @return
-     *     returns myhealthylife.dataservice.soap.People
-     */
-    @WebMethod
-    @WebResult(name = "people", targetNamespace = "")
-    @RequestWrapper(localName = "listPeople", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.ListPeople")
-    @ResponseWrapper(localName = "listPeopleResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.ListPeopleResponse")
-    @Action(input = "http://soap.dataservice.myhealthylife/DataService/listPeopleRequest", output = "http://soap.dataservice.myhealthylife/DataService/listPeopleResponse")
-    public People listPeople();
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns myhealthylife.dataservice.soap.Person
@@ -50,6 +38,18 @@ public interface DataService {
     public Person getPerson(
         @WebParam(name = "arg0", targetNamespace = "")
         long arg0);
+
+    /**
+     * 
+     * @return
+     *     returns myhealthylife.dataservice.soap.People
+     */
+    @WebMethod
+    @WebResult(name = "people", targetNamespace = "")
+    @RequestWrapper(localName = "listPeople", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.ListPeople")
+    @ResponseWrapper(localName = "listPeopleResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.ListPeopleResponse")
+    @Action(input = "http://soap.dataservice.myhealthylife/DataService/listPeopleRequest", output = "http://soap.dataservice.myhealthylife/DataService/listPeopleResponse")
+    public People listPeople();
 
     /**
      * 
@@ -233,6 +233,21 @@ public interface DataService {
     public Person getPersonByTelegramId(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns myhealthylife.dataservice.soap.CurrentType
+     */
+    @WebMethod
+    @WebResult(name = "weatherForecast", targetNamespace = "")
+    @RequestWrapper(localName = "getWeatherForecast", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetWeatherForecast")
+    @ResponseWrapper(localName = "getWeatherForecastResponse", targetNamespace = "http://soap.dataservice.myhealthylife/", className = "myhealthylife.dataservice.soap.GetWeatherForecastResponse")
+    @Action(input = "http://soap.dataservice.myhealthylife/DataService/getWeatherForecastRequest", output = "http://soap.dataservice.myhealthylife/DataService/getWeatherForecastResponse")
+    public CurrentType getWeatherForecast(
+        @WebParam(name = "arg0", targetNamespace = "")
+        long arg0);
 
     /**
      * 

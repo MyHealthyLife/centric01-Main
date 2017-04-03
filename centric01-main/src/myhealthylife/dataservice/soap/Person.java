@@ -20,6 +20,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="birthdate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
+ *         &lt;element name="city" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="country" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="firstname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="healthProfile" type="{http://soap.dataservice.myhealthylife/}healthProfile" minOccurs="0"/>
  *         &lt;element name="idPerson" type="{http://www.w3.org/2001/XMLSchema}long"/>
@@ -41,6 +43,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "person", propOrder = {
     "birthdate",
+    "city",
+    "country",
     "firstname",
     "healthProfile",
     "idPerson",
@@ -57,6 +61,8 @@ public class Person {
 
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar birthdate;
+    protected String city;
+    protected String country;
     protected String firstname;
     protected HealthProfile healthProfile;
     protected long idPerson;
@@ -90,6 +96,54 @@ public class Person {
      */
     public void setBirthdate(XMLGregorianCalendar value) {
         this.birthdate = value;
+    }
+
+    /**
+     * Gets the value of the city property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCity() {
+        return city;
+    }
+
+    /**
+     * Sets the value of the city property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCity(String value) {
+        this.city = value;
+    }
+
+    /**
+     * Gets the value of the country property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCountry() {
+        return country;
+    }
+
+    /**
+     * Sets the value of the country property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCountry(String value) {
+        this.country = value;
     }
 
     /**
