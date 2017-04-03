@@ -18,6 +18,7 @@ import org.apache.commons.math3.stat.regression.SimpleRegression;
 import jersey.repackaged.com.google.common.collect.Lists;
 import myhealthylife.centric1.util.ServicesLocator;
 import myhealthylife.centric1.util.Utilities;
+import myhealthylife.dataservice.soap.Current;
 import myhealthylife.dataservice.soap.CurrentHealth;
 import myhealthylife.dataservice.soap.DataService;
 import myhealthylife.dataservice.soap.Measure;
@@ -51,6 +52,89 @@ public class SentencesHandler {
 		return randomSentence;
         
 	}
+	
+	
+	
+
+	
+	@Path("/weather/{username}")
+	@GET
+    @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
+	public Response getSentenceBasedOnWeather(@PathParam("username") String username) {
+		
+		Sentences ss = ServicesLocator.getSentenceGeneratorConnection();
+		DataService ds = ServicesLocator.getDataServiceConnection();
+		
+		// Gets the person related to that username
+        Person person = ds.getPersonByUsername(username);
+        
+        // If the username does not exist it throws an error
+        if(person==null) {
+        	return null;
+        }
+        
+        Current weather=ds.getWeatherForecast(person.getIdPerson());
+        Float weatherCode = weather.getWeather().getNumber();
+        
+        Sentence sentenceToReturn;
+        
+        if(!this.rainingCondition(weatherCode) && !this.snowCondition(weatherCode) && !this.thunderstormCondition(weatherCode) && !this.drizzleCondition(weatherCode) && !this.extremeCondition(weatherCode)) {
+        	sentenceToReturn = ss.readRandomSentenceByTypeAndTrend("steps", true);
+        }
+        else {
+        	sentenceToReturn = ss.readRandomSentence();
+        }
+        
+        return Utilities.throwOK(sentenceToReturn);
+	}
+	
+	
+	private Boolean rainingCondition(Float statusCode) {
+		
+		if(statusCode>=500 && statusCode<=531) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	private Boolean snowCondition(Float statusCode) {
+		
+		if(statusCode>=600 && statusCode<=622) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	private Boolean thunderstormCondition(Float statusCode) {
+		
+		if(statusCode>=200 && statusCode<=232) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	private Boolean drizzleCondition(Float statusCode) {
+		
+		if(statusCode>=300 && statusCode<=321) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	private Boolean extremeCondition(Float statusCode) {
+		
+		if(statusCode>=900 && statusCode<=962) {
+			return true;
+		}
+		
+		return false;
+	}
+	
 	
 	
 
