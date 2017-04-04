@@ -94,6 +94,14 @@ public class DataHandler {
 			stored.setUsernameVisible(p.isUsernameVisible());
 		}
 		
+		if(p.getCity()!=null){
+			stored.setCity(p.getCity());
+		}
+		
+		if(p.getCountry()!=null){
+			stored.setCountry(p.getCountry());
+		}
+		
 		Person updated=ds.updatePerson(stored);
 		
 		
