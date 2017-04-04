@@ -80,10 +80,18 @@ public class SentencesHandler {
         Sentence sentenceToReturn;
         
         if(!this.rainingCondition(weatherCode) && !this.snowCondition(weatherCode) && !this.thunderstormCondition(weatherCode) && !this.drizzleCondition(weatherCode) && !this.extremeCondition(weatherCode)) {
+        	
+        	// Creates a composite sentence
         	sentenceToReturn = ss.readRandomSentenceByTypeAndTrend("steps", true);
+            Sentence weatherSentence = ss.readRandomSentenceByTypeAndTrend("weather", true);
+            sentenceToReturn.setText(weatherSentence.getText() + " " + sentenceToReturn.getText());
         }
         else {
-        	sentenceToReturn = ss.readRandomSentence();
+        	
+        	// Creates a composite sentence
+        	sentenceToReturn = ss.readRandomSentenceByTypeAndTrend("indoor", true);
+            Sentence weatherSentence = ss.readRandomSentenceByTypeAndTrend("weather", false);
+            sentenceToReturn.setText(weatherSentence.getText() + " " + sentenceToReturn.getText());
         }
         
         return Utilities.throwOK(sentenceToReturn);
