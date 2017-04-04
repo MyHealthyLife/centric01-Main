@@ -20,6 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="idSentenceType" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="motive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="privateType" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -32,7 +33,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "sentenceType", propOrder = {
     "idSentenceType",
     "name",
-    "motive"
+    "motive",
+    "privateType"
 })
 @XmlRootElement(name = "sentenceType")
 public class SentenceType {
@@ -40,6 +42,7 @@ public class SentenceType {
     protected Long idSentenceType;
     protected String name;
     protected Boolean motive;
+    protected boolean privateType;
 
     /**
      * Gets the value of the idSentenceType property.
@@ -111,6 +114,22 @@ public class SentenceType {
      */
     public void setMotive(Boolean value) {
         this.motive = value;
+    }
+
+    /**
+     * Gets the value of the privateType property.
+     * 
+     */
+    public boolean isPrivateType() {
+        return privateType;
+    }
+
+    /**
+     * Sets the value of the privateType property.
+     * 
+     */
+    public void setPrivateType(boolean value) {
+        this.privateType = value;
     }
 
 }

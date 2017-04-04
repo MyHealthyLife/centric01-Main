@@ -27,18 +27,6 @@ public interface Sentences {
 
     /**
      * 
-     * @return
-     *     returns myhealthylife.sentencegenerator.soap.Sentences_Type
-     */
-    @WebMethod
-    @WebResult(name = "sentenceList", targetNamespace = "")
-    @RequestWrapper(localName = "readSentenceList", targetNamespace = "http://soap.sentencegenerator.myhealthylife/", className = "myhealthylife.sentencegenerator.soap.ReadSentenceList")
-    @ResponseWrapper(localName = "readSentenceListResponse", targetNamespace = "http://soap.sentencegenerator.myhealthylife/", className = "myhealthylife.sentencegenerator.soap.ReadSentenceListResponse")
-    @Action(input = "http://soap.sentencegenerator.myhealthylife/Sentences/readSentenceListRequest", output = "http://soap.sentencegenerator.myhealthylife/Sentences/readSentenceListResponse")
-    public Sentences_Type readSentenceList();
-
-    /**
-     * 
      * @param sentenceId
      * @return
      *     returns myhealthylife.sentencegenerator.soap.Sentence
@@ -51,6 +39,18 @@ public interface Sentences {
     public Sentence readSentence(
         @WebParam(name = "sentenceId", targetNamespace = "")
         long sentenceId);
+
+    /**
+     * 
+     * @return
+     *     returns myhealthylife.sentencegenerator.soap.Sentences_Type
+     */
+    @WebMethod
+    @WebResult(name = "sentenceList", targetNamespace = "")
+    @RequestWrapper(localName = "readSentenceList", targetNamespace = "http://soap.sentencegenerator.myhealthylife/", className = "myhealthylife.sentencegenerator.soap.ReadSentenceList")
+    @ResponseWrapper(localName = "readSentenceListResponse", targetNamespace = "http://soap.sentencegenerator.myhealthylife/", className = "myhealthylife.sentencegenerator.soap.ReadSentenceListResponse")
+    @Action(input = "http://soap.sentencegenerator.myhealthylife/Sentences/readSentenceListRequest", output = "http://soap.sentencegenerator.myhealthylife/Sentences/readSentenceListResponse")
+    public Sentences_Type readSentenceList();
 
     /**
      * 
