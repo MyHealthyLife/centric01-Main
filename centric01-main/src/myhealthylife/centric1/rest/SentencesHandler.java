@@ -16,6 +16,7 @@ import javax.ws.rs.core.Response;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
 import jersey.repackaged.com.google.common.collect.Lists;
+import myhealthylife.centric1.model.WeatherSentence;
 import myhealthylife.centric1.util.ServicesLocator;
 import myhealthylife.centric1.util.Utilities;
 import myhealthylife.dataservice.soap.Current;
@@ -77,24 +78,34 @@ public class SentencesHandler {
         Current weather=ds.getWeatherForecast(person.getIdPerson());
         Float weatherCode = weather.getWeather().getNumber();
         
-        Sentence sentenceToReturn;
+        Sentence sentenceFirst;
+        Sentence sentenceSecond;
+        WeatherSentence weatherSentenceToReturn = new WeatherSentence();
         
         if(!this.rainingCondition(weatherCode) && !this.snowCondition(weatherCode) && !this.thunderstormCondition(weatherCode) && !this.drizzleCondition(weatherCode) && !this.extremeCondition(weatherCode)) {
         	
         	// Creates a composite sentence
-        	sentenceToReturn = ss.readRandomSentenceByTypeAndTrend("steps", true);
-            Sentence weatherSentence = ss.readRandomSentenceByTypeAndTrend("weather", true);
-            sentenceToReturn.setText(weatherSentence.getText() + " " + sentenceToReturn.getText());
+        	sentenceFirst = ss.readRandomSentenceByTypeAndTrend("steps", true);
+            sentenceSecond = ss.readRandomSentenceByTypeAndTrend("weather", true);
+            
+            weatherSentenceToReturn.setTextSentence(sentenceFirst.getText());
+            weatherSentenceToReturn.setTextWeather(sentenceSecond.getText());
+            
         }
         else {
         	
         	// Creates a composite sentence
-        	sentenceToReturn = ss.readRandomSentenceByTypeAndTrend("indoor", true);
-            Sentence weatherSentence = ss.readRandomSentenceByTypeAndTrend("weather", false);
-            sentenceToReturn.setText(weatherSentence.getText() + " " + sentenceToReturn.getText());
+        	sentenceFirst = ss.readRandomSentenceByTypeAndTrend("indoor", true);
+            sentenceSecond = ss.readRandomSentenceByTypeAndTrend("weather", false);
+            
+            weatherSentenceToReturn.setTextSentence(sentenceFirst.getText());
+            weatherSentenceToReturn.setTextWeather(sentenceSecond.getText());
+            
         }
         
-        return Utilities.throwOK(sentenceToReturn);
+        weatherSentenceToReturn.setWeatherCode(weatherCode);
+        
+        return Utilities.throwOK(weatherSentenceToReturn);
 	}
 	
 	

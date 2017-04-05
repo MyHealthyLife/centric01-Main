@@ -8,12 +8,14 @@ public class WeatherSentence {
 	
 	private Long idWeatherSentence;
 	
-	private String text;
-	
 	private String url;
 	
 	private Float weatherCode;
 
+	private String textWeather;
+	
+	private String textSentence;
+	
 	/**
 	 * @return the idWeatherSentence
 	 */
@@ -26,20 +28,6 @@ public class WeatherSentence {
 	 */
 	public void setIdWeatherSentence(Long idWeatherSentence) {
 		this.idWeatherSentence = idWeatherSentence;
-	}
-
-	/**
-	 * @return the text
-	 */
-	public String getText() {
-		return text;
-	}
-
-	/**
-	 * @param text the text to set
-	 */
-	public void setText(String text) {
-		this.text = text;
 	}
 
 	/**
@@ -59,15 +47,43 @@ public class WeatherSentence {
 	/**
 	 * @return the weatherCode
 	 */
-	private Float getWeatherCode() {
+	public Float getWeatherCode() {
 		return weatherCode;
 	}
 
 	/**
 	 * @param weatherCode the weatherCode to set
 	 */
-	private void setWeatherCode(Float weatherCode) {
+	public void setWeatherCode(Float weatherCode) {
 		this.weatherCode = weatherCode;
+	}
+
+	/**
+	 * @return the textWeather
+	 */
+	public String getTextWeather() {
+		return textWeather;
+	}
+
+	/**
+	 * @param textWeather the textWeather to set
+	 */
+	public void setTextWeather(String textWeather) {
+		this.textWeather = textWeather;
+	}
+
+	/**
+	 * @return the textSentence
+	 */
+	public String getTextSentence() {
+		return textSentence;
+	}
+
+	/**
+	 * @param textSentence the textSentence to set
+	 */
+	public void setTextSentence(String textSentence) {
+		this.textSentence = textSentence;
 	}
 	
 }
