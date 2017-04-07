@@ -16,6 +16,14 @@ public class WeatherSentence {
 	
 	private String textSentence;
 	
+	private String city;
+	
+	private String precipitation;
+	
+	private Float temperature;
+	
+	private Float windSpeed;
+	
 	/**
 	 * @return the idWeatherSentence
 	 */
@@ -84,6 +92,62 @@ public class WeatherSentence {
 	 */
 	public void setTextSentence(String textSentence) {
 		this.textSentence = textSentence;
+	}
+
+	/**
+	 * @return the city
+	 */
+	public String getCity() {
+		return city;
+	}
+
+	/**
+	 * @param city the city to set
+	 */
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	/**
+	 * @return the precipitation
+	 */
+	public String getPrecipitation() {
+		return precipitation;
+	}
+
+	/**
+	 * @param precipitation the precipitation to set
+	 */
+	public void setPrecipitation(String precipitation) {
+		this.precipitation = precipitation;
+	}
+
+	/**
+	 * @return the temperature
+	 */
+	public Float getTemperature() {
+		return temperature;
+	}
+
+	/**
+	 * @param temperature the temperature to set
+	 */
+	public void setTemperature(Float temperature) {
+		this.temperature = temperature;
+	}
+
+	/**
+	 * @return the windSpeed
+	 */
+	public Float getWindSpeed() {
+		return windSpeed;
+	}
+
+	/**
+	 * @param windSpeed the windSpeed to set
+	 */
+	public void setWindSpeed(Float windSpeed) {
+		this.windSpeed = windSpeed;
 	}
 	
 }
