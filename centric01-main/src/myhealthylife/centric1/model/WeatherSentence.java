@@ -24,6 +24,8 @@ public class WeatherSentence {
 	
 	private Float windSpeed;
 	
+	private String windDirection;
+	
 	/**
 	 * @return the idWeatherSentence
 	 */
@@ -148,6 +150,20 @@ public class WeatherSentence {
 	 */
 	public void setWindSpeed(Float windSpeed) {
 		this.windSpeed = windSpeed;
+	}
+
+	/**
+	 * @return the windDirection
+	 */
+	public String getWindDirection() {
+		return windDirection;
+	}
+
+	/**
+	 * @param windDirection the windDirection to set
+	 */
+	public void setWindDirection(String windDirection) {
+		this.windDirection = windDirection;
 	}
 	
 }

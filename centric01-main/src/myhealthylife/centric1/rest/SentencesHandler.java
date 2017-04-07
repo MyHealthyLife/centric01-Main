@@ -108,6 +108,7 @@ public class SentencesHandler {
         weatherSentenceToReturn.setPrecipitation(weather.getPrecipitation().getMode());
         weatherSentenceToReturn.setTemperature(weather.getTemperature().getValue());
         weatherSentenceToReturn.setWindSpeed(weather.getWind().getSpeed().getValue());
+        weatherSentenceToReturn.setWindDirection(weather.getWind().getDirection().getName());
         
         return Utilities.throwOK(weatherSentenceToReturn);
 	}
