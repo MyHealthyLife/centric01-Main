@@ -104,6 +104,10 @@ public class SentencesHandler {
         }
         
         weatherSentenceToReturn.setWeatherCode(weatherCode);
+        weatherSentenceToReturn.setCity(weather.getCity().getName() + " " + weather.getCity().getCountry());
+        weatherSentenceToReturn.setPrecipitation(weather.getPrecipitation().getMode());
+        weatherSentenceToReturn.setTemperature(weather.getTemperature().getValue());
+        weatherSentenceToReturn.setWindSpeed(weather.getWind().getSpeed().getValue());
         
         return Utilities.throwOK(weatherSentenceToReturn);
 	}
