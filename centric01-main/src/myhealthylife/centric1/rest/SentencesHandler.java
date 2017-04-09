@@ -79,30 +79,30 @@ public class SentencesHandler {
         Float weatherCode = weather.getWeather().getNumber();
         
         Sentence sentenceFirst;
-        Sentence sentenceSecond;
         WeatherSentence weatherSentenceToReturn = new WeatherSentence();
+        
+
         
         if(!this.rainingCondition(weatherCode) && !this.snowCondition(weatherCode) && !this.thunderstormCondition(weatherCode) && !this.drizzleCondition(weatherCode) && !this.extremeCondition(weatherCode)) {
         	
         	// Creates a composite sentence
         	sentenceFirst = ss.readRandomSentenceByTypeAndTrend("steps", true);
-            sentenceSecond = ss.readRandomSentenceByTypeAndTrend("weather", true);
-            
+
+            weatherSentenceToReturn.setTextWeather(weather.getWeather().getValue());            
             weatherSentenceToReturn.setTextSentence(sentenceFirst.getText());
-            weatherSentenceToReturn.setTextWeather(sentenceSecond.getText());
             
         }
         else {
         	
         	// Creates a composite sentence
         	sentenceFirst = ss.readRandomSentenceByTypeAndTrend("indoor", true);
-            sentenceSecond = ss.readRandomSentenceByTypeAndTrend("weather", false);
-            
+
+            weatherSentenceToReturn.setTextWeather(weather.getWeather().getValue());
             weatherSentenceToReturn.setTextSentence(sentenceFirst.getText());
-            weatherSentenceToReturn.setTextWeather(sentenceSecond.getText());
             
         }
         
+        weatherSentenceToReturn.setIdWeatherSentence(weather.getCity().getId());
         weatherSentenceToReturn.setWeatherCode(weatherCode);
         weatherSentenceToReturn.setCity(weather.getCity().getName() + " " + weather.getCity().getCountry());
         weatherSentenceToReturn.setPrecipitation(weather.getPrecipitation().getMode());
