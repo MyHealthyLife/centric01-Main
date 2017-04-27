@@ -14,6 +14,11 @@ import myhealthylife.dataservice.soap.Person;
 @Path("user/register")
 public class RegistrationHandler {
 	
+	/**
+	 * Register a new user into the system
+	 * @param p The Person object with the user data
+	 * @return The Person object just created
+	 */
 	@POST
 	@Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
