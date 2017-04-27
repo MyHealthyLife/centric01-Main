@@ -15,6 +15,12 @@ import myhealthylife.dataservice.soap.Person;
 @Path("/weather")
 public class WeatherForecast {
 
+	/**
+	 * This method return the weather forecast for the area into a specific person live.
+	 * This method returns a Current object which contains the weather information.
+	 * @param username
+	 * @return
+	 */
 	@GET
 	@Path("/{username}")
 	@Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
