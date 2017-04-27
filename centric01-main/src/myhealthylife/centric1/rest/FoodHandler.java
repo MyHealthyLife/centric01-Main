@@ -28,7 +28,14 @@ import myhealthylife.sentencegenerator.soap.Sentences;
 @Path("/foods")
 public class FoodHandler {
 
-
+	/**
+	 * Returns the suggested foods for that particular user identified by its username.
+	 * The suggested foods are calculated by the system by analysing all the measures contained 
+	 * in the measure history of a person. E.g. if the user gains weight and is already fat, the 
+	 * system will suggest foods with lower amount of calories.
+	 * @param username
+	 * @return
+	 */
 	@Path("/{username}")
 	@GET
 	@Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
@@ -54,12 +61,14 @@ public class FoodHandler {
         List<Measure> measureHistory = ds.getMeasureHistory(person.getIdPerson()).getMeasures();
         List<String> measureTypes = ds.getMeasureTypes().getMeasureTypes();
         
-        
+        // Lists used to check the count of the measures for each type and if it has been inserted or not
         List<Boolean> measureTypesInserted = new ArrayList<>();
         List<Integer> measureTypesInsertedCount = new ArrayList<>();
         
+        // List of the most recent measures
         ArrayList<ArrayList<Double>> lastMeasures = new ArrayList<ArrayList<Double>>();
         
+     // Init of the boolean list and the count of the measures for each type
         for(int i=0;i<measureTypes.size();i++) {
         	
         	measureTypesInserted.add(false);
@@ -68,26 +77,31 @@ public class FoodHandler {
         	
         }
         
-        // Retrieve last 3 measures
+        // Retrieve last 5 measures
         for(int i=0;i<measureHistory.size();i++) {
-        	System.out.println("Cycle: " + i);
-        	Measure extractedMeasure = measureHistory.get(i);
         	
-        	for(int j=0;j<measureTypes.size();j++) {
+        	// Gets the measure history of the user
+        	Measure extractedMeasure = measureHistory.get(i);
 
-            	System.out.println("Cycle [J]: " + j);
-        		String extractedType = measureTypes.get(j);
+	    	// For each measure type we get all the most recent measures
+        	for(int j=0;j<measureTypes.size();j++) {
         		
+        		String extractedType = measureTypes.get(j);
+
+	    		// Check if the extracted type is equal to the one of the current selected measure
         		if(extractedMeasure.getMeasureType().equals(extractedType)) {
         			
         			if(!measureTypesInserted.get(j)) {
-	        			
+
+	    				// Update the type count
         				Integer typeCount = measureTypesInsertedCount.get(j);
 	        			typeCount++;
 	        			measureTypesInsertedCount.set(j, typeCount);
-	        			
+
+	        			// Adds the measure in the list
 	        			lastMeasures.get(j).add(extractedMeasure.getMeasureValue());
-	        			
+
+	        			// Updates eventually the boolean list (only if the measures for that type has reached count 5
 	        			this.checkMeasuresCount(measureTypesInserted, measureTypesInsertedCount);
 	        			
         			}
@@ -97,7 +111,8 @@ public class FoodHandler {
         	
         }
 		
-        
+
+	    // Gets the preferred type (the one with the highest slope)
         List<String> preferredType = this.getPreferredSentenceType(lastMeasures, measureTypes);
         System.out.println("Preferred: " + preferredType.get(0) + " " + preferredType.get(1));
         String preferredTypeName = preferredType.get(0);
@@ -122,8 +137,12 @@ public class FoodHandler {
 	}
 	
 	
-	
-private void checkMeasuresCount(List<Boolean> measureTypesInserted, List<Integer> measureTypesInsertedCount) {
+	/**
+	 * Check if the measure count is 5 or more (we are interested in the trend of the last 5 measures
+	 * @param measureTypesInserted The list of bools that specify if a type has been inserted or not
+	 * @param measureTypesInsertedCount The measures count for each measure type
+	 */
+	private void checkMeasuresCount(List<Boolean> measureTypesInserted, List<Integer> measureTypesInsertedCount) {
 		
 		for(int i=0;i<measureTypesInsertedCount.size();i++) {
 			
@@ -139,7 +158,12 @@ private void checkMeasuresCount(List<Boolean> measureTypesInserted, List<Integer
 		
 	}
 	
-	
+	/**
+	 * Gets the preferred measure type that the system will use to retrieve a sentence (the one with the highest slope)
+	 * @param lastMeasures The object describing the last measures for each measure type
+	 * @param measureTypes The list of measures present in the system
+	 * @return The list of preferred measure type (the one with the highest slope)
+	 */
 	private List<String> getPreferredSentenceType(ArrayList<ArrayList<Double>> lastMeasures, List<String> measureTypes) {
 		
 		
