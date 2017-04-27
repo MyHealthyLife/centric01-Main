@@ -15,6 +15,10 @@ import myhealthylife.dataservice.soap.People;
 @Path("/people")
 public class PeopleHandler {
 
+	/**
+	 * Returns all the people present in the database of service01. The list of people is returned in a PeopleList
+	 * @return A list of all the people present in the database of service 01
+	 */
 	@GET
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
