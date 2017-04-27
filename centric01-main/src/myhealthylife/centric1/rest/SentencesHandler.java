@@ -32,7 +32,10 @@ import myhealthylife.sentencegenerator.soap.Sentences;
 @Path("/sentence")
 public class SentencesHandler {
 
-	
+	/**
+	 * Returns a random sentence by choosing one in the whole set of service 01
+	 * @return The Sentence object randomly chosen
+	 */
 	@Path("/random")
 	@GET
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
@@ -57,7 +60,18 @@ public class SentencesHandler {
 	
 	
 
-	
+	/**
+	 * Returns a suggested sentence for that particular user based on the current local weather.
+	 * The suggested sentence is calculated by the system by analysing the results coming from 
+	 * the external adapter (the one from openweather) and retrieving a possible sentence that 
+	 * tells the user how to train in all different weather configurations. E.g. if the local 
+	 * weather says it's raining, then the system will tell the user to do some indoor 
+	 * training/activity. The suggested sentence is returned as a custom object containing the 
+	 * two parts of the sentence (the one related to the weather and the one that tells the user 
+	 * what to do) and some useful weather information.
+	 * @param username The username related to the person that wants to retrieve the suggested sentence based on the local weather information.
+	 * @return The suggested sentence based on the weather
+	 */
 	@Path("/weather/{username}")
 	@GET
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
@@ -75,19 +89,22 @@ public class SentencesHandler {
         	return null;
         }
         
+        // Gets the local weather information
         Current weather=ds.getWeatherForecast(person.getIdPerson());
         Float weatherCode = weather.getWeather().getNumber();
         
+        // The two sentences that will be composed
         Sentence sentenceFirst;
         WeatherSentence weatherSentenceToReturn = new WeatherSentence();
         
 
-        
+        // Checks the weather conditions based on the code provided by the external service
         if(!this.rainingCondition(weatherCode) && !this.snowCondition(weatherCode) && !this.thunderstormCondition(weatherCode) && !this.drizzleCondition(weatherCode) && !this.extremeCondition(weatherCode)) {
         	
         	// Creates a composite sentence
         	sentenceFirst = ss.readRandomSentenceByTypeAndTrend("steps", true);
-
+        	
+        	// The weather sentence composed with the steps sentence
             weatherSentenceToReturn.setTextWeather(weather.getWeather().getValue());            
             weatherSentenceToReturn.setTextSentence(sentenceFirst.getText());
             
@@ -96,12 +113,14 @@ public class SentencesHandler {
         	
         	// Creates a composite sentence
         	sentenceFirst = ss.readRandomSentenceByTypeAndTrend("indoor", true);
-
+        	
+        	// The weather sentence composed with the indoor sentence
             weatherSentenceToReturn.setTextWeather(weather.getWeather().getValue());
             weatherSentenceToReturn.setTextSentence(sentenceFirst.getText());
             
         }
         
+        // Fills in all the information related to the weather sentence
         weatherSentenceToReturn.setIdWeatherSentence(weather.getCity().getId());
         weatherSentenceToReturn.setWeatherCode(weatherCode);
         weatherSentenceToReturn.setCity(weather.getCity().getName() + " " + weather.getCity().getCountry());
@@ -113,7 +132,11 @@ public class SentencesHandler {
         return Utilities.throwOK(weatherSentenceToReturn);
 	}
 	
-	
+	/**
+	 * Checks if it's raining
+	 * @param statusCode
+	 * @return
+	 */
 	private Boolean rainingCondition(Float statusCode) {
 		
 		if(statusCode>=500 && statusCode<=531) {
@@ -123,6 +146,11 @@ public class SentencesHandler {
 		return false;
 	}
 	
+	/**
+	 * Checks if it's snowing
+	 * @param statusCode
+	 * @return
+	 */
 	private Boolean snowCondition(Float statusCode) {
 		
 		if(statusCode>=600 && statusCode<=622) {
@@ -132,6 +160,11 @@ public class SentencesHandler {
 		return false;
 	}
 	
+	/**
+	 * Checks if there is a thunderstorm
+	 * @param statusCode
+	 * @return
+	 */
 	private Boolean thunderstormCondition(Float statusCode) {
 		
 		if(statusCode>=200 && statusCode<=232) {
@@ -141,6 +174,11 @@ public class SentencesHandler {
 		return false;
 	}
 	
+	/**
+	 * Checks if there are drizzles
+	 * @param statusCode
+	 * @return
+	 */
 	private Boolean drizzleCondition(Float statusCode) {
 		
 		if(statusCode>=300 && statusCode<=321) {
@@ -150,6 +188,11 @@ public class SentencesHandler {
 		return false;
 	}
 	
+	/**
+	 * Checks if the weather has extreme conditions (e.g. a hurricane)
+	 * @param statusCode
+	 * @return
+	 */
 	private Boolean extremeCondition(Float statusCode) {
 		
 		if(statusCode>=900 && statusCode<=962) {
@@ -162,7 +205,15 @@ public class SentencesHandler {
 	
 	
 
-	
+	/**
+	 * Returns a suggested sentence for that particular user identified by its username.
+	 * The suggested sentence is calculated by the system by analysing all the measures 
+	 * contained in the measure history of a person. E.g. if the user has few steps and 
+	 * should improve with training, the system will suggest a specific sentence to 
+	 * motivate the user go out and run.
+	 * @param username The username related to the person that wants to retrieve the suggested sentence.
+	 * @return The suggested sentence
+	 */
 	@Path("/{username}")
 	@GET
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
@@ -187,12 +238,14 @@ public class SentencesHandler {
         List<Measure> measureHistory = ds.getMeasureHistory(person.getIdPerson()).getMeasures();
         List<String> measureTypes = ds.getMeasureTypes().getMeasureTypes();
         
-        
+	    // Lists used to check the count of the measures for each type and if it has been inserted or not
         List<Boolean> measureTypesInserted = new ArrayList<>();
         List<Integer> measureTypesInsertedCount = new ArrayList<>();
-        
+
+	    // List of the most recent measures
         ArrayList<ArrayList<Double>> lastMeasures = new ArrayList<ArrayList<Double>>();
-        
+
+	    // Init of the boolean list and the count of the measures for each type
         for(int i=0;i<measureTypes.size();i++) {
         	
         	measureTypesInserted.add(false);
@@ -201,26 +254,31 @@ public class SentencesHandler {
         	
         }
         
-        // Retrieve last 3 measures
+        // Retrieve last 5 measures
         for(int i=0;i<measureHistory.size();i++) {
-        	System.out.println("Cycle: " + i);
-        	Measure extractedMeasure = measureHistory.get(i);
-        	
-        	for(int j=0;j<measureTypes.size();j++) {
 
-            	System.out.println("Cycle [J]: " + j);
-        		String extractedType = measureTypes.get(j);
+	    	// Gets the measure history of the user
+        	Measure extractedMeasure = measureHistory.get(i);
+
+	    	// For each measure type we get all the most recent measures
+        	for(int j=0;j<measureTypes.size();j++) {
         		
+        		String extractedType = measureTypes.get(j);
+
+	    		// Check if the extracted type is equal to the one of the current selected measure
         		if(extractedMeasure.getMeasureType().equals(extractedType)) {
         			
         			if(!measureTypesInserted.get(j)) {
-	        			
+
+	    				// Update the type count
         				Integer typeCount = measureTypesInsertedCount.get(j);
 	        			typeCount++;
 	        			measureTypesInsertedCount.set(j, typeCount);
-	        			
+
+	        			// Adds the measure in the list
 	        			lastMeasures.get(j).add(extractedMeasure.getMeasureValue());
-	        			
+
+	        			// Updates eventually the boolean list (only if the measures for that type has reached count 5
 	        			this.checkMeasuresCount(measureTypesInserted, measureTypesInsertedCount);
 	        			
         			}
@@ -230,11 +288,11 @@ public class SentencesHandler {
         	
         }
 		
-        
+
+	    // Gets the preferred type (the one with the highest slope)
         List<String> preferredType = this.getPreferredSentenceType(lastMeasures, measureTypes);
         String preferredTypeName = preferredType.get(0);
         Boolean preferredTypeTrend = Boolean.valueOf(preferredType.get(1));
-        
         
         // Gets the sentence to return
         Sentence sentenceToReturn = ss.readRandomSentenceByTypeAndTrend(preferredTypeName, preferredTypeTrend);
@@ -248,7 +306,11 @@ public class SentencesHandler {
         
 	}
 	
-	
+	/**
+	 * Check if the measure count is 5 or more (we are interested in the trend of the last 5 measures
+	 * @param measureTypesInserted The list of bools that specify if a type has been inserted or not
+	 * @param measureTypesInsertedCount The measures count for each measure type
+	 */
 	private void checkMeasuresCount(List<Boolean> measureTypesInserted, List<Integer> measureTypesInsertedCount) {
 		
 		for(int i=0;i<measureTypesInsertedCount.size();i++) {
@@ -265,7 +327,12 @@ public class SentencesHandler {
 		
 	}
 	
-	
+	/**
+	 * Gets the preferred measure type that the system will use to retrieve a sentence (the one with the highest slope)
+	 * @param lastMeasures The object describing the last measures for each measure type
+	 * @param measureTypes The list of measures present in the system
+	 * @return The list of preferred measure type (the one with the highest slope)
+	 */
 	private List<String> getPreferredSentenceType(ArrayList<ArrayList<Double>> lastMeasures, List<String> measureTypes) {
 		
 		
