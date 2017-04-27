@@ -25,6 +25,11 @@ import myhealtylife.optimalparamters.soap.Parameter;
 @Path("/user/goals")
 public class GoalHandler {
 
+	/**
+	 * Returns the goals for all measures to that particular user identified by its username. The username is sent as input by the caller.
+	 * @param username
+	 * @return
+	 */
 	@Path("/{username}")
 	@GET
 	@Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
