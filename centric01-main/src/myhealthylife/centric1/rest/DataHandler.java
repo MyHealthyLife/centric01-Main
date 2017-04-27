@@ -19,6 +19,11 @@ import myhealthylife.dataservice.soap.Person;
 @Path("/user/data")
 public class DataHandler {
 
+	/**
+	 * Returns the Person object related to that username provided as input by the caller.
+	 * @param username
+	 * @return
+	 */
 	@GET
 	@Path("/{username}")
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
@@ -30,6 +35,11 @@ public class DataHandler {
 		return p;
 	}
 
+	/**
+	 * Returns the Person object related to the telegram username provided as input by the caller.
+	 * @param username
+	 * @return
+	 */
 	@GET
 	@Path("/telegram/{username}")
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
@@ -41,6 +51,11 @@ public class DataHandler {
 		return person;
 	}
 	
+	/**
+	 *  Returns the Person object related to that telegram ID provided as input by the caller.
+	 * @param telegramId
+	 * @return
+	 */
 	@GET
 	@Path("/telegram/id/{telegramId}")
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
@@ -53,6 +68,12 @@ public class DataHandler {
 		return p;
 	}
 	
+	/**
+	 *  Updates the data of a Person object. It will eventually return the same updated object if the process ends correctly.
+	 * @param p person object to update
+	 * @param username of the person to update
+	 * @return
+	 */
 	@PUT
 	@Path("/{username}")//the username in path in this way also the username of the person can be update by the body
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
@@ -61,9 +82,11 @@ public class DataHandler {
 		DataService ds = ServicesLocator.getDataServiceConnection();
 		Person stored=ds.getPersonByUsername(username);
 		
+		/*the person do not exits return null*/
 		if(stored==null)
 			return null;
 		
+		/*update the person iformatio with the available data*/
 		if(p.getBirthdate()!=null)
 			stored.setBirthdate(p.getBirthdate());
 		
@@ -108,6 +131,11 @@ public class DataHandler {
 		return updated;
 	}
 	
+	/**
+	 *  Deletes a Person from the database. All the related data will be deleted as well.
+	 * @param username
+	 * @return
+	 */
 	@DELETE
 	@Path("/{username}")//the username in path in this way also the username of the person can be update by the body
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
