@@ -30,7 +30,8 @@ public class UserMeasuresHandler {
 
 	
 	/**
-	 * 
+	 * Returns the measure history of a specific person identified by its username. 
+	 * The measure history contains all the measures registered in the system for that particular user.
 	 * @param username
 	 * @return
 	 * @throws MalformedURLException
@@ -57,8 +58,14 @@ public class UserMeasuresHandler {
 	}
 	
 	
-
-
+	
+	/**
+	 * Returns a specific measure (identified by its measure id) of a specific person identified by its username. 
+	 * The object returned is a Measure object and contains all the information regarding that particular measure (such as measure id, measure value, type...)
+	 * @param username
+	 * @param mid
+	 * @return
+	 */
 	@Path("/{username}/{mid}")
 	@GET
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
@@ -85,7 +92,16 @@ public class UserMeasuresHandler {
 	
 	
 	
-	
+	/**
+	 * Updates a specific measure (identified by its measure id) of a specific person identified by its username. 
+	 * The caller must provide the Measure object with the updated values. 
+	 * The object returned is the updated Measure object.
+	 * 
+	 * @param measureToUpdate
+	 * @param username
+	 * @param mid the id of the measure
+	 * @return
+	 */
 	@Path("/{username}/{mid}")
 	@PUT
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
@@ -128,7 +144,13 @@ public class UserMeasuresHandler {
 	
 	
 	
-	
+	/**
+	 * Creates a measure for a specific person identified by its username. 
+	 * The caller must provide the Measure object that wants to create. The object returned is the created Measure object.
+	 * @param measureToCreate
+	 * @param username
+	 * @return
+	 */
 	@Path("/{username}")
 	@POST
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
@@ -162,7 +184,15 @@ public class UserMeasuresHandler {
 	}
 	
 	
-	
+	/**
+	 * Deletes a specific measure for a specific person identified by its username. 
+	 * The caller must provide the identifier of the Measure object that wants to delete. 
+	 * The object returned is a single Integer object containing the measure identifier of the deleted measure.
+	 *  
+	 * @param username
+	 * @param mid
+	 * @return
+	 */
 	@Path("/{username}/{mid}")
 	@DELETE
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
